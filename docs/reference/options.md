@@ -623,7 +623,7 @@ string
 
 
 *Default:*
-` "devenv-16a3de0b53062f3b6e6678a84f28e04344732e0002fcad6af20ffbeaa0491014" `
+` "devenv-4a07da32ae917f66ca172f9ac049a98a3cbc3117052149075130f422f0a8a6ec" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/hostctl.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/hostctl.nix)
@@ -2263,7 +2263,7 @@ string *(read only)*
 
 
 *Example:*
-` "/home/runner/work/devenv/devenv/.devenv/state/php-fpm/<name>.sock" `
+` "/home/runner/work/devops-devenv/devops-devenv/.devenv/state/php-fpm/<name>.sock" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/languages/php.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/php.nix)
@@ -2296,7 +2296,7 @@ attribute set of (string or signed integer or boolean)
 
 ```
 {
-  error_log = "/home/runner/work/devenv/devenv/.devenv/state/php-fpm/php-fpm.log";
+  error_log = "/home/runner/work/devops-devenv/devops-devenv/.devenv/state/php-fpm/php-fpm.log";
 }
 ```
 
@@ -4748,8 +4748,6 @@ boolean
 
 ## pre-commit.settings.deadnix.noUnderscore
 
-
-
 Don’t check any bindings that start with a ` _ `.
 
 
@@ -6457,7 +6455,7 @@ path
 
 
 *Default:*
-` "/home/runner/work/devenv/devenv/.devenv/state/caddy" `
+` "/home/runner/work/devops-devenv/devops-devenv/.devenv/state/caddy" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/services/caddy.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/caddy.nix)
@@ -7007,7 +7005,7 @@ attribute set of attribute set of (INI atom (null, bool, int, float or string))
     database_dir = baseDir;
     single_node = true;
     view_index_dir = baseDir;
-    uri_file = "/home/runner/work/devenv/devenv/.devenv/state/couchdb/couchdb.uri";
+    uri_file = "/home/runner/work/devops-devenv/devops-devenv/.devenv/state/couchdb/couchdb.uri";
   };
   admins = {
     "admin_username" = "pass";
@@ -7048,8 +7046,6 @@ string
 
 ## services.couchdb.settings.chttpd.port
 
-
-
 Defined the port number to listen.
 
 
@@ -7082,7 +7078,7 @@ path
 
 
 *Default:*
-` "/home/runner/work/devenv/devenv/.devenv/state/couchdb" `
+` "/home/runner/work/devops-devenv/devops-devenv/.devenv/state/couchdb" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/services/couchdb.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/couchdb.nix)
@@ -7128,7 +7124,7 @@ path
 
 
 *Default:*
-` "/home/runner/work/devenv/devenv/.devenv/state/couchdb/couchdb.uri" `
+` "/home/runner/work/devops-devenv/devops-devenv/.devenv/state/couchdb/couchdb.uri" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/services/couchdb.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/couchdb.nix)
@@ -7150,7 +7146,7 @@ path
 
 
 *Default:*
-` "/home/runner/work/devenv/devenv/.devenv/state/couchdb" `
+` "/home/runner/work/devops-devenv/devops-devenv/.devenv/state/couchdb" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/services/couchdb.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/couchdb.nix)
