@@ -525,7 +525,6 @@ Disable the hint that are printed when the dotenv module is not enabled, but .en
 
 
 
-
 *Type:*
 boolean
 
@@ -541,13 +540,12 @@ boolean
 
 ## dotenv.filename
 
-The name of the dotenv file to load.
-
+The name of the dotenv file to load, or a list of dotenv files to load in order of precedence.
 
 
 
 *Type:*
-string
+string or list of string
 
 
 
@@ -6073,6 +6071,25 @@ attribute set of (submodule)
 
 
 
+## scripts.\<name>.description
+
+Description of the script.
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+` "" `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/scripts.nix](https://github.com/cachix/devenv/blob/main/src/modules/scripts.nix)
+
+
+
 ## scripts.\<name>.exec
 
 Bash code to execute when the script is run.
@@ -7004,8 +7021,6 @@ to know more about all settings, look at:
 />
 
 
-
-
 *Type:*
 attribute set of attribute set of (INI atom (null, bool, int, float or string))
 
@@ -7043,6 +7058,8 @@ attribute set of attribute set of (INI atom (null, bool, int, float or string))
 
 
 ## services.couchdb.settings.chttpd.bind_address
+
+
 
 Defines the IP address by which CouchDB will be accessible.
 
@@ -7169,6 +7186,68 @@ path
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/services/couchdb.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/couchdb.nix)
+
+
+
+## services.elasticmq.enable
+
+Whether to enable elasticmq-server.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/elasticmq.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/elasticmq.nix)
+
+
+
+## services.elasticmq.package
+
+Which package of elasticmq-server-bin to use
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.elasticmq-server-bin `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/elasticmq.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/elasticmq.nix)
+
+
+
+## services.elasticmq.settings
+
+Configuration for elasticmq-server
+
+
+
+*Type:*
+strings concatenated with “\\n”
+
+
+
+*Default:*
+` "" `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/elasticmq.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/elasticmq.nix)
 
 
 
@@ -8610,6 +8689,34 @@ package
 
 
 
+## services.nginx.defaultMimeTypes
+
+
+
+Default MIME types for NGINX, as MIME types definitions from NGINX are very incomplete,
+we use by default the ones bundled in the mailcap package, used by most of the other
+Linux distributions.
+
+
+
+*Type:*
+path
+
+
+
+*Default:*
+` $''{pkgs.mailcap}/etc/nginx/mime.types `
+
+
+
+*Example:*
+` $''{pkgs.nginx}/conf/mime.types `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/nginx.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/nginx.nix)
+
+
+
 ## services.nginx.eventsConfig
 
 The nginx events configuration.
@@ -9597,7 +9704,7 @@ strings concatenated with “\\n”
 
 
 *Default:*
-` "" `
+` "locale-collate C" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/services/redis.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/redis.nix)
