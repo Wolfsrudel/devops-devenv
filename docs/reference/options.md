@@ -258,6 +258,25 @@ null or string
 
 
 
+## delta.enable
+
+Integrate delta into git: https://dandavison.github.io/delta/.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/delta.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/delta.nix)
+
+
+
 ## devcontainer.enable
 
 Whether to enable generation .devcontainer.json for devenv integration.
@@ -1467,7 +1486,7 @@ boolean
 
 ## languages.javascript.package
 
-The Node package to use.
+The Node package to use, for example pkgs.bun
 
 
 
@@ -1733,6 +1752,25 @@ boolean
 
 
 
+## languages.nix.lsp.package
+
+The LSP package to use
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.nil `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/nix.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/nix.nix)
+
+
+
 ## languages.ocaml.enable
 
 Whether to enable tools for OCaml development.
@@ -1906,6 +1944,8 @@ boolean
 Allows you to [override the default used package](https://nixos.org/manual/nixpkgs/stable/#ssec-php-user-guide)
 to adjust the settings or add more extensions. You can find the
 extensions using `devenv search 'php extensions'`
+
+
 
 
 *Type:*
@@ -2300,8 +2340,6 @@ quotes (e.g. `"pm.max_children"` instead of `pm.max_children`).
 
 You need not specify the options `error_log` or `daemonize` here, since
 they are already set.
-
-
 
 
 *Type:*
@@ -4818,8 +4856,6 @@ boolean
 
 ## pre-commit.settings.clippy.denyWarnings
 
-
-
 Fail when warnings are present
 
 
@@ -4859,6 +4895,8 @@ boolean
 
 
 ## pre-commit.settings.credo.strict
+
+
 
 Whether to auto-promote the changes.
 
@@ -7026,8 +7064,6 @@ boolean
 
 ## pre-commit.settings.typos.locale
 
-
-
 Which language to use for spell checking.
 
 
@@ -7067,6 +7103,8 @@ boolean
 
 
 ## pre-commit.settings.vale.config
+
+
 
 Multiline-string configuration passed as config file.
 
@@ -8754,6 +8792,68 @@ path
 
 
 
+## services.dynamodb-local.enable
+
+Whether to enable DynamoDB Local.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/dynamodb-local.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/dynamodb-local.nix)
+
+
+
+## services.dynamodb-local.package
+
+Which package of DynamoDB to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.dynamodb-local `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/dynamodb-local.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/dynamodb-local.nix)
+
+
+
+## services.dynamodb-local.port
+
+Listen address for the Dynamodb-local.
+
+
+
+*Type:*
+16 bit unsigned integer; between 0 and 65535 (both inclusive)
+
+
+
+*Default:*
+` 8000 `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/dynamodb-local.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/dynamodb-local.nix)
+
+
+
 ## services.elasticmq.enable
 
 Whether to enable elasticmq-server.
@@ -10273,6 +10373,29 @@ lazy attribute set of lazy attribute set of anything
 
 
 
+## services.mysql.useDefaultsExtraFile
+
+Whether to use defaults-exta-file for the mysql command instead of defaults-file.
+This is useful if you want to provide a config file on the command line.
+However this can problematic if you have MySQL installed globaly because its config might leak into your environment.
+This option does not affect the mysqld command.
+
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/mysql.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/mysql.nix)
+
+
+
 ## services.nginx.enable
 
 Whether to enable nginx.
@@ -11186,6 +11309,31 @@ On which port to run the management plugin
 
 *Default:*
 ` 15672 `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/services/rabbitmq.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/rabbitmq.nix)
+
+
+
+## services.rabbitmq.nodeName
+
+The name of the RabbitMQ node.  This is used to identify
+the node in a cluster.  If you are running multiple
+RabbitMQ nodes on the same machine, you must give each
+node a unique name.  The name must be of the form
+`name@host`, where `name` is an arbitrary name and
+`host` is the domain name of the host.
+
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+` "rabbit@localhost" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/services/rabbitmq.nix](https://github.com/cachix/devenv/blob/main/src/modules/services/rabbitmq.nix)
