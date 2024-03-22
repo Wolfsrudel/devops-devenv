@@ -2,7 +2,9 @@
 
 ## packages
 
-A list of packages to expose inside the developer environment. Search available packages using ``devenv search NAME``.
+
+
+A list of packages to expose inside the developer environment. Search available packages using ` devenv search NAME `.
 
 
 
@@ -19,9 +21,339 @@ list of package
 
 
 
+## aws-vault.enable
+
+
+
+Whether to enable aws-vault integration.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.package
+
+
+
+The aws-vault package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.aws-vault `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.awscliWrapper
+
+Attribute set of packages including awscli2
+
+
+
+*Type:*
+submodule
+
+
+
+*Default:*
+` pkgs `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.awscliWrapper.enable
+
+
+
+Whether to enable Wraps awscli2 binary as ` aws-vault exec <profile> -- aws <args> `.
+.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.awscliWrapper.package
+
+
+
+The awscli2 package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.awscli2 `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.opentofuWrapper
+
+
+
+Attribute set of packages including opentofu
+
+
+
+*Type:*
+submodule
+
+
+
+*Default:*
+` pkgs `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.opentofuWrapper.enable
+
+
+
+Whether to enable Wraps opentofu binary as ` aws-vault exec <profile> -- opentofu <args> `.
+.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.opentofuWrapper.package
+
+
+
+The opentofu package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.opentofu `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.profile
+
+
+
+The profile name passed to ` aws-vault exec `.
+
+
+
+*Type:*
+string
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.terraformWrapper
+
+
+
+Attribute set of packages including terraform
+
+
+
+*Type:*
+submodule
+
+
+
+*Default:*
+` pkgs `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.terraformWrapper.enable
+
+
+
+Whether to enable Wraps terraform binary as ` aws-vault exec <profile> -- terraform <args> `.
+.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## aws-vault.terraformWrapper.package
+
+
+
+The terraform package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.terraform `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/aws-vault.nix)
+
+
+
+## cachix.enable
+
+
+
+Whether to enable Cachix integration.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/cachix.nix](https://github.com/cachix/devenv/blob/main/src/modules/cachix.nix)
+
+
+
+## cachix.pull
+
+
+
+What caches to pull from.
+
+
+
+*Type:*
+list of string
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/cachix.nix](https://github.com/cachix/devenv/blob/main/src/modules/cachix.nix)
+
+
+
+## cachix.push
+
+
+
+What cache to push to. Automatically also adds it to the list of caches to pull from.
+
+
+
+*Type:*
+null or string
+
+
+
+*Default:*
+` null `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/cachix.nix](https://github.com/cachix/devenv/blob/main/src/modules/cachix.nix)
+
+
+
 ## certificates
 
+
+
 List of domains to generate certificates for.
+
+
 
 *Type:*
 list of string
@@ -49,6 +381,8 @@ list of string
 
 ## container.isBuilding
 
+
+
 Set to true when the environment is building a container.
 
 
@@ -68,7 +402,9 @@ boolean
 
 ## containers
 
-Container specifications that can be built, copied and ran using `devenv container`.
+
+
+Container specifications that can be built, copied and ran using ` devenv container `.
 
 
 
@@ -86,6 +422,8 @@ attribute set of (submodule)
 
 
 ## containers.\<name>.copyToRoot
+
+
 
 Add a path to the container. Defaults to the whole git repo.
 
@@ -106,9 +444,10 @@ null or path or list of path
 
 ## containers.\<name>.defaultCopyArgs
 
-Default arguments to pass to `skopeo copy`.
-You can override them by passing arguments to the script.
 
+
+Default arguments to pass to ` skopeo copy `.
+You can override them by passing arguments to the script.
 
 
 
@@ -126,6 +465,8 @@ list of string
 
 
 ## containers.\<name>.entrypoint
+
+
 
 Entrypoint of the container.
 
@@ -146,6 +487,8 @@ list of anything
 
 ## containers.\<name>.isBuilding
 
+
+
 Set to true when the environment is building this container.
 
 
@@ -165,12 +508,14 @@ boolean
 
 ## containers.\<name>.maxLayers
 
-the maximum number of layers to create.
+
+
+Maximum number of container layers created.
 
 
 
 *Type:*
-signed integer
+null or signed integer
 
 
 
@@ -183,6 +528,8 @@ signed integer
 
 
 ## containers.\<name>.name
+
+
 
 Name of the container.
 
@@ -203,6 +550,8 @@ null or string
 
 ## containers.\<name>.registry
 
+
+
 Registry to push the container to.
 
 
@@ -221,6 +570,8 @@ null or string
 
 
 ## containers.\<name>.startupCommand
+
+
 
 Command to run in the container.
 
@@ -241,6 +592,8 @@ null or string or package
 
 ## containers.\<name>.version
 
+
+
 Version/tag of the container.
 
 
@@ -260,6 +613,8 @@ null or string
 
 ## delta.enable
 
+
+
 Integrate delta into git: https://dandavison.github.io/delta/.
 
 
@@ -278,6 +633,8 @@ boolean
 
 
 ## devcontainer.enable
+
+
 
 Whether to enable generation .devcontainer.json for devenv integration.
 
@@ -404,7 +761,7 @@ anything
 
 
 *Default:*
-` "devenv ci" `
+` "devenv test" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/devcontainer.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/devcontainer.nix)
@@ -412,6 +769,8 @@ anything
 
 
 ## devenv.debug
+
+
 
 Whether to enable debug mode of devenv enterShell script.
 
@@ -437,8 +796,9 @@ boolean
 
 ## devenv.flakesIntegration
 
-Tells if devenv is being imported by a flake.nix file
 
+
+Tells if devenv is being imported by a flake.nix file
 
 
 
@@ -457,8 +817,9 @@ boolean
 
 ## devenv.latestVersion
 
-The latest version of devenv.
 
+
+The latest version of devenv.
 
 
 
@@ -468,7 +829,7 @@ string
 
 
 *Default:*
-` "0.6.3" `
+` "1.0" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/update-check.nix](https://github.com/cachix/devenv/blob/main/src/modules/update-check.nix)
@@ -477,8 +838,9 @@ string
 
 ## devenv.warnOnNewVersion
 
-Whether to warn when a new version of devenv is available.
 
+
+Whether to warn when a new version of devenv is available.
 
 
 
@@ -496,6 +858,8 @@ boolean
 
 
 ## difftastic.enable
+
+
 
 Integrate difftastic into git: https://difftastic.wilfred.me.uk/.
 
@@ -516,7 +880,9 @@ boolean
 
 ## dotenv.enable
 
-Whether to enable .env integration, doesn't support comments or multiline values..
+
+
+Whether to enable .env integration, doesn’t support comments or multiline values…
 
 
 
@@ -540,6 +906,8 @@ boolean
 
 ## dotenv.disableHint
 
+
+
 Disable the hint that are printed when the dotenv module is not enabled, but .env is present.
 
 
@@ -558,6 +926,8 @@ boolean
 
 
 ## dotenv.filename
+
+
 
 The name of the dotenv file to load, or a list of dotenv files to load in order of precedence.
 
@@ -578,6 +948,8 @@ string or list of string
 
 ## enterShell
 
+
+
 Bash code to execute when entering the shell.
 
 
@@ -595,7 +967,25 @@ strings concatenated with “\\n”
 
 
 
+## enterTest
+
+
+
+Bash code to execute to run the test.
+
+
+
+*Type:*
+strings concatenated with “\\n”
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/tests.nix](https://github.com/cachix/devenv/blob/main/src/modules/tests.nix)
+
+
+
 ## env
+
+
 
 Environment variables to be exposed inside the developer environment.
 
@@ -615,6 +1005,8 @@ lazy attribute set of anything
 
 
 ## hosts
+
+
 
 List of hosts entries.
 
@@ -649,6 +1041,8 @@ attribute set of (string or list of string)
 
 ## hostsProfileName
 
+
+
 Profile name to use.
 
 
@@ -668,6 +1062,8 @@ string
 
 ## infoSections
 
+
+
 Information about the environment
 
 
@@ -686,6 +1082,8 @@ attribute set of list of string
 
 
 ## languages.ansible.enable
+
+
 
 Whether to enable tools for Ansible development.
 
@@ -711,6 +1109,8 @@ boolean
 
 ## languages.ansible.package
 
+
+
 The Ansible package to use.
 
 
@@ -729,6 +1129,8 @@ package
 
 
 ## languages.c.enable
+
+
 
 Whether to enable tools for C development.
 
@@ -754,6 +1156,8 @@ boolean
 
 ## languages.clojure.enable
 
+
+
 Whether to enable tools for Clojure development.
 
 
@@ -777,6 +1181,8 @@ boolean
 
 
 ## languages.cplusplus.enable
+
+
 
 Whether to enable tools for C++ development.
 
@@ -802,7 +1208,9 @@ boolean
 
 ## languages.crystal.enable
 
-Whether to enable Enable tools for Crystal development..
+
+
+Whether to enable Enable tools for Crystal development…
 
 
 
@@ -825,6 +1233,8 @@ boolean
 
 
 ## languages.cue.enable
+
+
 
 Whether to enable tools for Cue development.
 
@@ -850,6 +1260,8 @@ boolean
 
 ## languages.cue.package
 
+
+
 The CUE package to use.
 
 
@@ -868,6 +1280,8 @@ package
 
 
 ## languages.dart.enable
+
+
 
 Whether to enable tools for Dart development.
 
@@ -893,6 +1307,8 @@ boolean
 
 ## languages.dart.package
 
+
+
 The Dart package to use.
 
 
@@ -911,6 +1327,8 @@ package
 
 
 ## languages.deno.enable
+
+
 
 Whether to enable tools for Deno development.
 
@@ -936,6 +1354,8 @@ boolean
 
 ## languages.dotnet.enable
 
+
+
 Whether to enable tools for .NET development.
 
 
@@ -960,6 +1380,8 @@ boolean
 
 ## languages.dotnet.package
 
+
+
 The .NET SDK package to use.
 
 
@@ -978,6 +1400,8 @@ package
 
 
 ## languages.elixir.enable
+
+
 
 Whether to enable tools for Elixir development.
 
@@ -1003,6 +1427,8 @@ boolean
 
 ## languages.elixir.package
 
+
+
 Which package of Elixir to use.
 
 
@@ -1021,6 +1447,8 @@ package
 
 
 ## languages.elm.enable
+
+
 
 Whether to enable tools for Elm development.
 
@@ -1046,6 +1474,8 @@ boolean
 
 ## languages.erlang.enable
 
+
+
 Whether to enable tools for Erlang development.
 
 
@@ -1070,6 +1500,8 @@ boolean
 
 ## languages.erlang.package
 
+
+
 Which package of Erlang to use.
 
 
@@ -1088,6 +1520,8 @@ package
 
 
 ## languages.gawk.enable
+
+
 
 Whether to enable tools for GNU Awk development.
 
@@ -1113,6 +1547,8 @@ boolean
 
 ## languages.gleam.enable
 
+
+
 Whether to enable tools for Gleam development.
 
 
@@ -1137,6 +1573,8 @@ boolean
 
 ## languages.gleam.package
 
+
+
 The Gleam package to use.
 
 
@@ -1155,6 +1593,8 @@ package
 
 
 ## languages.go.enable
+
+
 
 Whether to enable tools for Go development.
 
@@ -1180,6 +1620,8 @@ boolean
 
 ## languages.go.package
 
+
+
 The Go package to use.
 
 
@@ -1198,6 +1640,8 @@ package
 
 
 ## languages.haskell.enable
+
+
 
 Whether to enable tools for Haskell development.
 
@@ -1223,8 +1667,9 @@ boolean
 
 ## languages.haskell.package
 
-Haskell compiler to use.
 
+
+Haskell compiler to use.
 
 
 
@@ -1243,8 +1688,9 @@ package
 
 ## languages.haskell.languageServer
 
-Haskell language server to use.
 
+
+Haskell language server to use.
 
 
 
@@ -1263,8 +1709,9 @@ null or package
 
 ## languages.haskell.stack
 
-Haskell stack to use.
 
+
+Haskell stack to use.
 
 
 
@@ -1282,6 +1729,8 @@ null or package
 
 
 ## languages.idris.enable
+
+
 
 Whether to enable tools for Idris development.
 
@@ -1307,8 +1756,9 @@ boolean
 
 ## languages.idris.package
 
-The Idris package to use.
 
+
+The Idris package to use.
 
 
 
@@ -1331,6 +1781,8 @@ package
 
 
 ## languages.java.enable
+
+
 
 Whether to enable tools for Java development.
 
@@ -1356,6 +1808,8 @@ boolean
 
 ## languages.java.gradle.enable
 
+
+
 Whether to enable gradle.
 
 
@@ -1380,14 +1834,20 @@ boolean
 
 ## languages.java.gradle.package
 
-The Gradle package to use.
-The Gradle package by default inherits the JDK from `languages.java.jdk.package`.
 
+
+The Gradle package to use.
+The Gradle package by default inherits the JDK from ` languages.java.jdk.package `.
 
 
 
 *Type:*
 package
+
+
+
+*Default:*
+` pkgs.gradle.override { jdk = cfg.jdk.package; } `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/languages/java.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/java.nix)
@@ -1396,9 +1856,10 @@ package
 
 ## languages.java.jdk.package
 
-The JDK package to use.
-This will also become available as `JAVA_HOME`.
 
+
+The JDK package to use.
+This will also become available as ` JAVA_HOME `.
 
 
 
@@ -1421,6 +1882,8 @@ package
 
 
 ## languages.java.maven.enable
+
+
 
 Whether to enable maven.
 
@@ -1446,14 +1909,20 @@ boolean
 
 ## languages.java.maven.package
 
-The Maven package to use.
-The Maven package by default inherits the JDK from `languages.java.jdk.package`.
 
+
+The Maven package to use.
+The Maven package by default inherits the JDK from ` languages.java.jdk.package `.
 
 
 
 *Type:*
 package
+
+
+
+*Default:*
+` "pkgs.maven.override { jdk = cfg.jdk.package; }" `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/languages/java.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/java.nix)
@@ -1461,6 +1930,8 @@ package
 
 
 ## languages.javascript.enable
+
+
 
 Whether to enable tools for JavaScript development.
 
@@ -1486,7 +1957,9 @@ boolean
 
 ## languages.javascript.package
 
-The Node package to use, for example pkgs.bun
+
+
+The Node.js package to use.
 
 
 
@@ -1496,16 +1969,18 @@ package
 
 
 *Default:*
-` pkgs.nodejs `
+` pkgs.nodejs-slim `
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
 
 
 
-## languages.javascript.corepack.enable
+## languages.javascript.bun.enable
 
-Whether to enable shims for package managers besides npm.
+
+
+Whether to enable install bun.
 
 
 
@@ -1527,7 +2002,156 @@ boolean
 
 
 
+## languages.javascript.bun.package
+
+
+
+The bun package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.bun `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.bun.install.enable
+
+
+
+Whether to enable bun install during devenv initialisation.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.corepack.enable
+
+
+
+Whether to enable wrappers for npm, pnpm and Yarn via Node.js Corepack.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.directory
+
+
+
+The JavaScript project’s root directory. Defaults to the root of the devenv project.
+Can be an absolute path or one relative to the root of the devenv project.
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+` config.devenv.root `
+
+
+
+*Example:*
+` "./directory" `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.npm.enable
+
+
+
+Whether to enable install npm.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.npm.package
+
+
+
+The Node.js package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.nodejs `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
 ## languages.javascript.npm.install.enable
+
+
 
 Whether to enable npm install during devenv initialisation.
 
@@ -1551,7 +2175,155 @@ boolean
 
 
 
+## languages.javascript.pnpm.enable
+
+
+
+Whether to enable install pnpm.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.pnpm.package
+
+
+
+The pnpm package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.nodePackages.pnpm `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.pnpm.install.enable
+
+
+
+Whether to enable pnpm install during devenv initialisation.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.yarn.enable
+
+
+
+Whether to enable install yarn.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.yarn.package
+
+
+
+The yarn package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.yarn `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
+## languages.javascript.yarn.install.enable
+
+
+
+Whether to enable yarn install during devenv initialisation.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/javascript.nix)
+
+
+
 ## languages.jsonnet.enable
+
+
 
 Whether to enable tools for jsonnet development.
 
@@ -1601,6 +2373,8 @@ boolean
 
 ## languages.julia.package
 
+
+
 The Julia package to use.
 
 
@@ -1619,6 +2393,8 @@ package
 
 
 ## languages.kotlin.enable
+
+
 
 Whether to enable tools for Kotlin development.
 
@@ -1644,6 +2420,8 @@ boolean
 
 ## languages.lua.enable
 
+
+
 Whether to enable tools for Lua development.
 
 
@@ -1668,6 +2446,8 @@ boolean
 
 ## languages.lua.package
 
+
+
 The Lua package to use.
 
 
@@ -1686,6 +2466,8 @@ package
 
 
 ## languages.nim.enable
+
+
 
 Whether to enable tools for Nim development.
 
@@ -1711,6 +2493,8 @@ boolean
 
 ## languages.nim.package
 
+
+
 The Nim package to use.
 
 
@@ -1729,6 +2513,8 @@ package
 
 
 ## languages.nix.enable
+
+
 
 Whether to enable tools for Nix development.
 
@@ -1754,6 +2540,8 @@ boolean
 
 ## languages.nix.lsp.package
 
+
+
 The LSP package to use
 
 
@@ -1772,6 +2560,8 @@ package
 
 
 ## languages.ocaml.enable
+
+
 
 Whether to enable tools for OCaml development.
 
@@ -1797,6 +2587,8 @@ boolean
 
 ## languages.ocaml.packages
 
+
+
 The package set of OCaml to use
 
 
@@ -1814,7 +2606,56 @@ attribute set
 
 
 
+## languages.opentofu.enable
+
+
+
+Whether to enable tools for OpenTofu development.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/opentofu.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/opentofu.nix)
+
+
+
+## languages.opentofu.package
+
+
+
+The OpenTofu package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.opentofu `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/opentofu.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/opentofu.nix)
+
+
+
 ## languages.pascal.enable
+
+
 
 Whether to enable tools for Pascal development.
 
@@ -1840,6 +2681,8 @@ boolean
 
 ## languages.pascal.lazarus.enable
 
+
+
 Whether to enable lazarus graphical IDE for the FreePascal language.
 
 
@@ -1864,6 +2707,8 @@ boolean
 
 ## languages.perl.enable
 
+
+
 Whether to enable tools for Perl development.
 
 
@@ -1887,6 +2732,8 @@ boolean
 
 
 ## languages.perl.packages
+
+
 
 Perl packages to include
 
@@ -1917,6 +2764,8 @@ list of string
 
 ## languages.php.enable
 
+
+
 Whether to enable tools for PHP development.
 
 
@@ -1941,10 +2790,11 @@ boolean
 
 ## languages.php.package
 
-Allows you to [override the default used package](https://nixos.org/manual/nixpkgs/stable/#ssec-php-user-guide)
-to adjust the settings or add more extensions. You can find the
-extensions using `devenv search 'php extensions'`
 
+
+Allows you to [override the default used package](https://nixos.org/manual/nixpkgs/stable/\#ssec-php-user-guide)
+to adjust the settings or add more extensions. You can find the
+extensions using ` devenv search 'php extensions' `
 
 
 
@@ -1977,6 +2827,8 @@ pkgs.php.buildEnv {
 
 ## languages.php.packages
 
+
+
 Attribute set of packages including composer
 
 
@@ -1995,6 +2847,8 @@ submodule
 
 
 ## languages.php.packages.composer
+
+
 
 composer package
 
@@ -2015,8 +2869,9 @@ null or package
 
 ## languages.php.disableExtensions
 
-PHP extensions to disable.
 
+
+PHP extensions to disable.
 
 
 
@@ -2035,8 +2890,9 @@ list of string
 
 ## languages.php.extensions
 
-PHP extensions to enable.
 
+
+PHP extensions to enable.
 
 
 
@@ -2055,11 +2911,12 @@ list of string
 
 ## languages.php.fpm.extraConfig
 
+
+
 Extra configuration that should be put in the global section of
 the PHP-FPM configuration file. Do not specify the options
-`error_log` or `daemonize` here, since they are generated by
+` error_log ` or ` daemonize ` here, since they are generated by
 NixOS.
-
 
 
 
@@ -2078,8 +2935,9 @@ null or strings concatenated with “\\n”
 
 ## languages.php.fpm.phpOptions
 
-Options appended to the PHP configuration file `php.ini`.
 
+
+Options appended to the PHP configuration file ` php.ini `.
 
 
 
@@ -2108,9 +2966,10 @@ strings concatenated with “\\n”
 
 ## languages.php.fpm.pools
 
+
+
 PHP-FPM pools. If no pools are defined, the PHP-FPM
 service is disabled.
-
 
 
 
@@ -2151,10 +3010,11 @@ attribute set of (submodule)
 
 ## languages.php.fpm.pools.\<name>.extraConfig
 
-Extra lines that go into the pool configuration.
-See the documentation on `php-fpm.conf` for
-details on configuration directives.
 
+
+Extra lines that go into the pool configuration.
+See the documentation on ` php-fpm.conf ` for
+details on configuration directives.
 
 
 
@@ -2173,8 +3033,9 @@ null or strings concatenated with “\\n”
 
 ## languages.php.fpm.pools.\<name>.listen
 
-The address on which to accept FastCGI requests.
 
+
+The address on which to accept FastCGI requests.
 
 
 
@@ -2198,8 +3059,9 @@ string
 
 ## languages.php.fpm.pools.\<name>.phpEnv
 
-Environment variables used for this PHP-FPM pool.
 
+
+Environment variables used for this PHP-FPM pool.
 
 
 
@@ -2232,8 +3094,9 @@ attribute set of string
 
 ## languages.php.fpm.pools.\<name>.phpOptions
 
-Options appended to the PHP configuration file `php.ini` used for this PHP-FPM pool.
 
+
+Options appended to the PHP configuration file ` php.ini ` used for this PHP-FPM pool.
 
 
 
@@ -2247,8 +3110,9 @@ strings concatenated with “\\n”
 
 ## languages.php.fpm.pools.\<name>.phpPackage
 
-The PHP package to use for running this PHP-FPM pool.
 
+
+The PHP package to use for running this PHP-FPM pool.
 
 
 
@@ -2267,12 +3131,13 @@ package
 
 ## languages.php.fpm.pools.\<name>.settings
 
-PHP-FPM pool directives. Refer to the "List of pool directives" section of
-<https://www.php.net/manual/en/install.fpm.configuration.php">
-the manual for details. Note that settings names must be
-enclosed in quotes (e.g. `"pm.max_children"` instead of
-`pm.max_children`).
 
+
+PHP-FPM pool directives. Refer to the “List of pool directives” section of
+[https://www.php.net/manual/en/install.fpm.configuration.php"](https://www.php.net/manual/en/install.fpm.configuration.php%22)
+the manual for details. Note that settings names must be
+enclosed in quotes (e.g. ` "pm.max_children" ` instead of
+` pm.max_children `).
 
 
 
@@ -2307,10 +3172,11 @@ attribute set of (string or signed integer or boolean)
 
 ## languages.php.fpm.pools.\<name>.socket
 
+
+
 Path to the Unix socket file on which to accept FastCGI requests.
 
 This option is read-only and managed by NixOS.
-
 
 
 
@@ -2329,17 +3195,20 @@ string *(read only)*
 
 ## languages.php.fpm.settings
 
-PHP-FPM global directives. 
 
-Refer to the "List of global php-fpm.conf directives" section of
-<https://www.php.net/manual/en/install.fpm.configuration.php>
-for details. 
+
+PHP-FPM global directives.
+
+Refer to the “List of global php-fpm.conf directives” section of
+[https://www.php.net/manual/en/install.fpm.configuration.php](https://www.php.net/manual/en/install.fpm.configuration.php)
+for details.
 
 Note that settings names must be enclosed in
-quotes (e.g. `"pm.max_children"` instead of `pm.max_children`). 
+quotes (e.g. ` "pm.max_children" ` instead of ` pm.max_children `).
 
-You need not specify the options `error_log` or `daemonize` here, since
+You need not specify the options ` error_log ` or ` daemonize ` here, since
 they are already set.
+
 
 
 *Type:*
@@ -2362,8 +3231,9 @@ attribute set of (string or signed integer or boolean)
 
 ## languages.php.ini
 
-PHP.ini directives. Refer to the "List of php.ini directives" of PHP's
 
+
+PHP.ini directives. Refer to the “List of php.ini directives” of PHP’s
 
 
 
@@ -2381,6 +3251,8 @@ null or strings concatenated with “\\n”
 
 
 ## languages.php.version
+
+
 
 The PHP version to use.
 
@@ -2400,6 +3272,8 @@ string
 
 
 ## languages.purescript.enable
+
+
 
 Whether to enable tools for PureScript development.
 
@@ -2425,6 +3299,8 @@ boolean
 
 ## languages.purescript.package
 
+
+
 The PureScript package to use.
 
 
@@ -2443,6 +3319,8 @@ package
 
 
 ## languages.python.enable
+
+
 
 Whether to enable tools for Python development.
 
@@ -2468,6 +3346,8 @@ boolean
 
 ## languages.python.package
 
+
+
 The Python package to use.
 
 
@@ -2485,7 +3365,62 @@ package
 
 
 
+## languages.python.libraries
+
+
+
+Additional libraries to make available to the Python interpreter.
+
+This is useful when you want to use Python wheels that depend on native libraries.
+
+
+
+*Type:*
+list of path
+
+
+
+*Default:*
+
+```
+[
+  "/home/runner/work/devenv/devenv/.devenv/profile"
+]
+```
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/python.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/python.nix)
+
+
+
+## languages.python.manylinux.enable
+
+
+
+Whether to install manylinux2014 libraries.
+
+Enabled by default on linux;
+
+This is useful when you want to use Python wheels that depend on manylinux2014 libraries.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/python.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/python.nix)
+
+
+
 ## languages.python.poetry.enable
+
+
 
 Whether to enable poetry.
 
@@ -2511,6 +3446,8 @@ boolean
 
 ## languages.python.poetry.package
 
+
+
 The Poetry package to use.
 
 
@@ -2529,6 +3466,8 @@ package
 
 
 ## languages.python.poetry.activate.enable
+
+
 
 Whether to enable activate the poetry virtual environment automatically.
 
@@ -2554,6 +3493,8 @@ boolean
 
 ## languages.python.poetry.install.enable
 
+
+
 Whether to enable poetry install during devenv initialisation.
 
 
@@ -2578,7 +3519,9 @@ boolean
 
 ## languages.python.poetry.install.allExtras
 
-Whether to install all extras. See `--all-extras`.
+
+
+Whether to install all extras. See ` --all-extras `.
 
 
 
@@ -2597,7 +3540,9 @@ boolean
 
 ## languages.python.poetry.install.extras
 
-Which extras to install. See `--extras`.
+
+
+Which extras to install. See ` --extras `.
 
 
 
@@ -2616,7 +3561,9 @@ list of string
 
 ## languages.python.poetry.install.groups
 
-Which dependency-groups to install. See `--with`.
+
+
+Which dependency-groups to install. See ` --with `.
 
 
 
@@ -2635,7 +3582,9 @@ list of string
 
 ## languages.python.poetry.install.installRootPackage
 
-Whether the root package (your project) should be installed. See `--no-root`
+
+
+Whether the root package (your project) should be installed. See ` --no-root `
 
 
 
@@ -2654,7 +3603,9 @@ boolean
 
 ## languages.python.poetry.install.quiet
 
-Whether `poetry install` should avoid outputting messages during devenv initialisation.
+
+
+Whether ` poetry install ` should avoid outputting messages during devenv initialisation.
 
 
 
@@ -2672,6 +3623,8 @@ boolean
 
 
 ## languages.python.venv.enable
+
+
 
 Whether to enable Python virtual environment.
 
@@ -2697,7 +3650,9 @@ boolean
 
 ## languages.python.venv.quiet
 
-Whether `pip install` should avoid outputting messages during devenv initialisation.
+
+
+Whether ` pip install ` should avoid outputting messages during devenv initialisation.
 
 
 
@@ -2716,9 +3671,10 @@ boolean
 
 ## languages.python.venv.requirements
 
-Contents of pip requirements.txt file.
-This is passed to `pip install -r` during `devenv shell` initialisation.
 
+
+Contents of pip requirements.txt file.
+This is passed to ` pip install -r ` during ` devenv shell ` initialisation.
 
 
 
@@ -2737,9 +3693,10 @@ null or strings concatenated with “\\n” or path
 
 ## languages.python.version
 
-The Python version to use.
-This automatically sets the `languages.python.package` using [nixpkgs-python](https://github.com/cachix/nixpkgs-python).
 
+
+The Python version to use.
+This automatically sets the ` languages.python.package ` using [nixpkgs-python](https://github.com/cachix/nixpkgs-python).
 
 
 
@@ -2762,6 +3719,8 @@ null or string
 
 
 ## languages.r.enable
+
+
 
 Whether to enable tools for R development.
 
@@ -2787,6 +3746,8 @@ boolean
 
 ## languages.r.package
 
+
+
 The R package to use.
 
 
@@ -2805,6 +3766,8 @@ package
 
 
 ## languages.racket.enable
+
+
 
 Whether to enable tools for Racket development.
 
@@ -2830,6 +3793,8 @@ boolean
 
 ## languages.racket.package
 
+
+
 The Racket package to use.
 
 
@@ -2848,6 +3813,8 @@ package
 
 
 ## languages.raku.enable
+
+
 
 Whether to enable tools for Raku development.
 
@@ -2873,6 +3840,8 @@ boolean
 
 ## languages.robotframework.enable
 
+
+
 Whether to enable tools for Robot Framework development.
 
 
@@ -2897,6 +3866,8 @@ boolean
 
 ## languages.robotframework.python
 
+
+
 The Python package to use.
 
 
@@ -2915,6 +3886,8 @@ package
 
 
 ## languages.ruby.enable
+
+
 
 Whether to enable tools for Ruby development.
 
@@ -2940,6 +3913,8 @@ boolean
 
 ## languages.ruby.package
 
+
+
 The Ruby package to use.
 
 
@@ -2958,6 +3933,8 @@ package
 
 
 ## languages.ruby.bundler.enable
+
+
 
 Whether to enable bundler.
 
@@ -2983,6 +3960,8 @@ boolean
 
 ## languages.ruby.bundler.package
 
+
+
 The bundler package to use.
 
 
@@ -3002,9 +3981,10 @@ package
 
 ## languages.ruby.version
 
-The Ruby version to use.
-This automatically sets the `languages.ruby.package` using [nixpkgs-ruby](https://github.com/bobvanderlinden/nixpkgs-ruby).
 
+
+The Ruby version to use.
+This automatically sets the ` languages.ruby.package ` using [nixpkgs-ruby](https://github.com/bobvanderlinden/nixpkgs-ruby).
 
 
 
@@ -3028,14 +4008,15 @@ null or string
 
 ## languages.ruby.versionFile
 
+
+
 The .ruby-version file path to extract the Ruby version from.
-This automatically sets the `languages.ruby.package` using [nixpkgs-ruby](https://github.com/bobvanderlinden/nixpkgs-ruby).
-When the `.ruby-version` file exists in the same directory as the devenv configuration, you can use:
+This automatically sets the ` languages.ruby.package ` using [nixpkgs-ruby](https://github.com/bobvanderlinden/nixpkgs-ruby).
+When the ` .ruby-version ` file exists in the same directory as the devenv configuration, you can use:
 
 ```nix
 languages.ruby.versionFile = ./.ruby-version;
 ```
-
 
 
 
@@ -3063,6 +4044,8 @@ null or path
 
 ## languages.rust.enable
 
+
+
 Whether to enable tools for Rust development.
 
 
@@ -3087,6 +4070,8 @@ boolean
 
 ## languages.rust.channel
 
+
+
 The rustup toolchain to install.
 
 
@@ -3106,9 +4091,10 @@ one of “nixpkgs”, “stable”, “beta”, “nightly”
 
 ## languages.rust.components
 
-List of [Rustup components](https://rust-lang.github.io/rustup/concepts/components.html)
-to install. Defaults to those available in `nixpkgs`.
 
+
+List of [Rustup components](https://rust-lang.github.io/rustup/concepts/components.html)
+to install. Defaults to those available in ` nixpkgs `.
 
 
 
@@ -3127,7 +4113,9 @@ list of string
 
 ## languages.rust.toolchain
 
-Rust component packages. May optionally define additional components, for example `miri`.
+
+
+Rust component packages. May optionally define additional components, for example ` miri `.
 
 
 
@@ -3145,6 +4133,8 @@ attribute set of package
 
 
 ## languages.rust.toolchain.cargo
+
+
 
 cargo package
 
@@ -3165,6 +4155,8 @@ null or package
 
 ## languages.rust.toolchain.clippy
 
+
+
 clippy package
 
 
@@ -3183,6 +4175,8 @@ null or package
 
 
 ## languages.rust.toolchain.rust-analyzer
+
+
 
 rust-analyzer package
 
@@ -3203,6 +4197,8 @@ null or package
 
 ## languages.rust.toolchain.rustc
 
+
+
 rustc package
 
 
@@ -3222,6 +4218,8 @@ null or package
 
 ## languages.rust.toolchain.rustfmt
 
+
+
 rustfmt package
 
 
@@ -3240,6 +4238,8 @@ null or package
 
 
 ## languages.scala.enable
+
+
 
 Whether to enable tools for Scala development.
 
@@ -3265,8 +4265,9 @@ boolean
 
 ## languages.scala.package
 
-The Scala package to use.
 
+
+The Scala package to use.
 
 
 
@@ -3284,6 +4285,8 @@ package
 
 
 ## languages.shell.enable
+
+
 
 Whether to enable tools for shell development.
 
@@ -3309,6 +4312,8 @@ boolean
 
 ## languages.standardml.enable
 
+
+
 Whether to enable tools for Standard ML development.
 
 
@@ -3333,8 +4338,9 @@ boolean
 
 ## languages.standardml.package
 
-The Standard ML package to use.
 
+
+The Standard ML package to use.
 
 
 
@@ -3352,6 +4358,8 @@ package
 
 
 ## languages.swift.enable
+
+
 
 Whether to enable tools for Swift development.
 
@@ -3377,8 +4385,9 @@ boolean
 
 ## languages.swift.package
 
-The Swift package to use.
 
+
+The Swift package to use.
 
 
 
@@ -3396,6 +4405,8 @@ package
 
 
 ## languages.terraform.enable
+
+
 
 Whether to enable tools for Terraform development.
 
@@ -3421,6 +4432,8 @@ boolean
 
 ## languages.terraform.package
 
+
+
 The Terraform package to use.
 
 
@@ -3439,6 +4452,8 @@ package
 
 
 ## languages.texlive.enable
+
+
 
 Whether to enable TeX Live.
 
@@ -3464,12 +4479,14 @@ boolean
 
 ## languages.texlive.packages
 
+
+
 Packages available to TeX Live
 
 
 
 *Type:*
-non-empty (list of Concatenated string)
+non-empty (list of string)
 
 
 
@@ -3487,6 +4504,8 @@ non-empty (list of Concatenated string)
 
 
 ## languages.texlive.base
+
+
 
 TeX Live package set to use
 
@@ -3506,6 +4525,8 @@ unspecified value
 
 
 ## languages.typescript.enable
+
+
 
 Whether to enable tools for TypeScript development.
 
@@ -3531,6 +4552,8 @@ boolean
 
 ## languages.unison.enable
 
+
+
 Whether to enable tools for Unison development.
 
 
@@ -3555,6 +4578,8 @@ boolean
 
 ## languages.unison.package
 
+
+
 Which package of Unison to use
 
 
@@ -3573,6 +4598,8 @@ package
 
 
 ## languages.v.enable
+
+
 
 Whether to enable tools for V development.
 
@@ -3598,6 +4625,8 @@ boolean
 
 ## languages.v.package
 
+
+
 The V package to use.
 
 
@@ -3615,7 +4644,61 @@ package
 
 
 
+## languages.vala.enable
+
+
+
+Whether to enable tools for Vala development.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/vala.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/vala.nix)
+
+
+
+## languages.vala.package
+
+
+
+The Vala package to use.
+
+
+
+*Type:*
+package
+
+
+
+*Default:*
+` pkgs.vala `
+
+
+
+*Example:*
+` pkgs.vala_0_54 `
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/languages/vala.nix](https://github.com/cachix/devenv/blob/main/src/modules/languages/vala.nix)
+
+
+
 ## languages.zig.enable
+
+
 
 Whether to enable tools for Zig development.
 
@@ -3641,6 +4724,8 @@ boolean
 
 ## languages.zig.package
 
+
+
 Which package of Zig to use.
 
 
@@ -3659,6 +4744,8 @@ package
 
 
 ## name
+
+
 
 Name of the project.
 
@@ -3706,6 +4793,15 @@ The ` pre-commit ` package to use.
 
 *Type:*
 package
+
+
+
+*Default:*
+
+```
+pkgs.pre-commit
+
+```
 
 *Declared by:*
  - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/pre-commit.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/pre-commit.nix)
@@ -3856,6 +4952,10 @@ Lint Rust code.
 **` cljfmt `**
 
 A tool for formatting Clojure code.
+
+**` cmake-format `**
+
+A tool for formatting CMake-files.
 
 **` commitizen `**
 
@@ -4582,6 +5682,11 @@ sources.
 *Type:*
 path
 
+
+
+*Default:*
+` gitignoreSource config.src `
+
 *Declared by:*
  - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/pre-commit.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/pre-commit.nix)
 
@@ -4803,7 +5908,7 @@ string
 *Default:*
 
 ```
-"${pkgs.autoflake}/bin/autoflake"
+"${tools.autoflake}/bin/autoflake"
 
 ```
 
@@ -4856,6 +5961,8 @@ boolean
 
 ## pre-commit.settings.clippy.denyWarnings
 
+
+
 Fail when warnings are present
 
 
@@ -4888,6 +5995,32 @@ boolean
 
 *Default:*
 ` true `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.cmake-format.configPath
+
+
+
+Path to the configuration file (.json,.python,.yaml)
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+` "" `
+
+
+
+*Example:*
+` ".cmake-format.json" `
 
 *Declared by:*
  - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
@@ -5377,8 +6510,39 @@ string
 *Default:*
 
 ```
-"${pkgs.python39Packages.flake8}/bin/flake8"
+"${tools.flake8}/bin/flake8"
 
+```
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.flake8.extendIgnore
+
+
+
+List of additional ignore codes
+
+
+
+*Type:*
+list of string
+
+
+
+*Default:*
+` [ ] `
+
+
+
+*Example:*
+
+```
+[
+  "E501"
+]
 ```
 
 *Declared by:*
@@ -5421,7 +6585,7 @@ package
 
 
 *Default:*
-` "\${pkgs.python311Packages.flynt}" `
+` "\${tools.flynt}" `
 
 
 
@@ -6189,7 +7353,7 @@ path
 *Default:*
 
 ```
-"${pkgs.python311Packages.mkdocs-linkcheck}/bin/mkdocs-linkcheck"
+"${tools.mkdocs-linkcheck}/bin/mkdocs-linkcheck"
 
 ```
 
@@ -6220,8 +7384,6 @@ string
 
 
 ## pre-commit.settings.mkdocs-linkcheck.local-only
-
-
 
 Whether to only check local links.
 
@@ -6319,7 +7481,7 @@ string
 *Default:*
 
 ```
-"${pkgs.mypy}/bin/mypy"
+"${tools.mypy}/bin/mypy"
 
 ```
 
@@ -6407,7 +7569,7 @@ string
 *Default:*
 
 ```
-"${pkgs.php81Packages.php-cs-fixer}/bin/php-cs-fixer"
+"${tools.php-cs-fixer}/bin/php-cs-fixer"
 
 ```
 
@@ -6432,7 +7594,7 @@ string
 *Default:*
 
 ```
-"${pkgs.php80Packages.phpcbf}/bin/phpcbf"
+"${tools.phpcbf}/bin/phpcbf"
 
 ```
 
@@ -6457,7 +7619,7 @@ string
 *Default:*
 
 ```
-"${pkgs.php80Packages.phpcs}/bin/phpcs"
+"${tools.phpcs}/bin/phpcs"
 
 ```
 
@@ -6482,9 +7644,30 @@ string
 *Default:*
 
 ```
-"${pkgs.php81Packages.phpstan}/bin/phpstan"
+"${tools.phpstan}/bin/phpstan"
 
 ```
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.allow-parens
+
+
+
+Include parentheses around a sole arrow function parameter.
+
+
+
+*Type:*
+one of “always”, “avoid”
+
+
+
+*Default:*
+` "always" `
 
 *Declared by:*
  - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
@@ -6516,21 +7699,742 @@ path
 
 
 
-## pre-commit.settings.prettier.output
+## pre-commit.settings.prettier.bracket-same-line
 
 
 
-Output format.
+Put > of opening tags on the last line instead of on a new line.
 
 
 
 *Type:*
-null or one of “check”, “list-different”
+boolean
 
 
 
 *Default:*
-` "list-different" `
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.cache
+
+
+
+Only format changed files.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.cache-location
+
+
+
+Path to the cache file location used by ` --cache ` flag.
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+` "./node_modules/.cache/prettier/.prettier-cache" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.cache-strategy
+
+
+
+Strategy for the cache to use for detecting changed files.
+
+
+
+*Type:*
+null or one of “metadata”, “content”
+
+
+
+*Default:*
+` null `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.check
+
+
+
+Output a human-friendly message and a list of unformatted files, if any.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.color
+
+
+
+Colorize error messages.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.config-precedence
+
+
+
+Defines how config file should be evaluated in combination of CLI options.
+
+
+
+*Type:*
+one of “cli-override”, “file-override”, “prefer-file”
+
+
+
+*Default:*
+` "cli-override" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.configPath
+
+
+
+Path to a Prettier configuration file (.prettierrc, package.json, prettier.config.js).
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+` "" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.embedded-language-formatting
+
+
+
+Control how Prettier formats quoted code embedded in the file.
+
+
+
+*Type:*
+one of “auto”, “off”
+
+
+
+*Default:*
+` "auto" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.end-of-line
+
+
+
+Which end of line characters to apply.
+
+
+
+*Type:*
+one of “lf”, “crlf”, “cr”, “auto”
+
+
+
+*Default:*
+` "lf" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.html-whitespace-sensitivity
+
+
+
+How to handle whitespaces in HTML.
+
+
+
+*Type:*
+one of “css”, “strict”, “ignore”
+
+
+
+*Default:*
+` "css" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.ignore-path
+
+
+
+Path to a file containing patterns that describe files to ignore.
+By default, prettier looks for ` ./.gitignore ` and ` ./.prettierignore `.
+Multiple values are accepted.
+
+
+
+*Type:*
+list of path
+
+
+
+*Default:*
+` [ ] `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.ignore-unknown
+
+
+
+Ignore unknown files.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.insert-pragma
+
+
+
+Insert @format pragma into file’s first docblock comment.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.jsx-single-quote
+
+
+
+Use single quotes in JSX.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.list-different
+
+
+
+Print the filenames of files that are different from Prettier formatting.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` true `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.log-level
+
+
+
+What level of logs to report.
+
+
+
+*Type:*
+one of “silent”, “error”, “warn”, “log”, “debug”
+
+
+
+*Default:*
+` "log" `
+
+
+
+*Example:*
+` "debug" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.no-bracket-spacing
+
+
+
+Do not print spaces between brackets.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.no-config
+
+
+
+Do not look for a configuration file.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.no-editorconfig
+
+
+
+Don’t take .editorconfig into account when parsing configuration.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.no-error-on-unmatched-pattern
+
+
+
+Prevent errors when pattern is unmatched.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.no-semi
+
+
+
+Do not print semicolons, except at the beginning of lines which may need them.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.parser
+
+
+
+Which parser to use.
+
+
+
+*Type:*
+one of “”, “flow”, “babel”, “babel-flow”, “babel-ts”, “typescript”, “acorn”, “espree”, “meriyah”, “css”, “less”, “scss”, “json”, “json5”, “json-stringify”, “graphql”, “markdown”, “mdx”, “vue”, “yaml”, “glimmer”, “html”, “angular”, “lwc”
+
+
+
+*Default:*
+` "" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.plugins
+
+
+
+Add plugins from paths.
+
+
+
+*Type:*
+list of string
+
+
+
+*Default:*
+` [ ] `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.print-width
+
+
+
+Line length that the printer will wrap on.
+
+
+
+*Type:*
+signed integer
+
+
+
+*Default:*
+` 80 `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.prose-wrap
+
+
+
+When to or if at all hard wrap prose to print width.
+
+
+
+*Type:*
+one of “always”, “never”, “preserve”
+
+
+
+*Default:*
+` "preserve" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.quote-props
+
+
+
+Change when properties in objects are quoted.
+
+
+
+*Type:*
+one of “as-needed”, “consistent”, “preserve”
+
+
+
+*Default:*
+` "as-needed" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.require-pragma
+
+
+
+Require either ‘@prettier’ or ‘@format’ to be present in the file’s first docblock comment.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.single-attribute-per-line
+
+
+
+Enforce single attribute per line in HTML, Vue andJSX.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.single-quote
+
+
+
+Number of spaces per indentation-level.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.tab-width
+
+
+
+Line length that the printer will wrap on.
+
+
+
+*Type:*
+signed integer
+
+
+
+*Default:*
+` 2 `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.trailing-comma
+
+
+
+Print trailing commas wherever possible in multi-line comma-separated syntactic structures.
+
+
+
+*Type:*
+one of “all”, “es5”, “none”
+
+
+
+*Default:*
+` "all" `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.use-tabs
+
+
+
+Indent with tabs instead of spaces.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.vue-indent-script-and-style
+
+
+
+Indent script and style tags in Vue files.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.prettier.with-node-modules
+
+
+
+Process files inside ‘node_modules’ directory.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
 
 *Declared by:*
  - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
@@ -6541,7 +8445,7 @@ null or one of “check”, “list-different”
 
 
 
-Whether to edit files inplace.
+Edit files in-place.
 
 
 
@@ -6574,7 +8478,7 @@ string
 *Default:*
 
 ```
-"${pkgs.php81Packages.phpstan}/bin/psalm"
+"${tools.psalm}/bin/psalm"
 
 ```
 
@@ -6599,7 +8503,7 @@ string
 *Default:*
 
 ```
-"${pkgs.python39Packages.pylint}/bin/pylint"
+"${tools.pylint}/bin/pylint"
 
 ```
 
@@ -6666,7 +8570,7 @@ string
 *Default:*
 
 ```
-"${pkgs.pyright}/bin/pyright"
+"${tools.pyright}/bin/pyright"
 
 ```
 
@@ -6691,7 +8595,7 @@ string
 *Default:*
 
 ```
-"${pkgs.pyupgrade}/bin/pyupgrade"
+"${tools.pyupgrade}/bin/pyupgrade"
 
 ```
 
@@ -6735,7 +8639,7 @@ path
 
 
 *Default:*
-` "\${pkgs.rome}/bin/rome" `
+` "\${tools.biome}/bin/biome" `
 
 *Declared by:*
  - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
@@ -6893,6 +8797,27 @@ package
 
 
 
+## pre-commit.settings.typos.binary
+
+
+
+Whether to search binary files.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
 ## pre-commit.settings.typos.color
 
 
@@ -6918,7 +8843,7 @@ one of “auto”, “always”, “never”
 
 
 
-Multiline-string configuration passed as config file.
+Multiline-string configuration passed as config file. If set, config set in ` typos.settings.configPath ` gets ignored.
 
 
 
@@ -6968,6 +8893,11 @@ string
 *Default:*
 ` "" `
 
+
+
+*Example:*
+` ".typos.toml" `
+
 *Declared by:*
  - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
 
@@ -6977,7 +8907,7 @@ string
 
 
 
-Whether to print a diff of what would change.
+Print a diff of what would change.
 
 
 
@@ -6998,7 +8928,7 @@ boolean
 
 
 
-Which files \& directories to exclude matching the glob.
+Ignore files and directories matching the glob.
 
 
 
@@ -7024,7 +8954,7 @@ string
 
 
 
-Which output format to use.
+Output format to use.
 
 
 
@@ -7045,7 +8975,7 @@ one of “silent”, “brief”, “long”, “json”
 
 
 
-Whether to search hidden files and directories.
+Search hidden files and directories.
 
 
 
@@ -7062,7 +8992,41 @@ boolean
 
 
 
+## pre-commit.settings.typos.ignored-words
+
+
+
+Spellings and words to ignore.
+
+
+
+*Type:*
+list of string
+
+
+
+*Default:*
+` [ ] `
+
+
+
+*Example:*
+
+```
+[
+  "MQTT"
+  "mosquitto"
+]
+```
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
 ## pre-commit.settings.typos.locale
+
+
 
 Which language to use for spell checking.
 
@@ -7081,11 +9045,116 @@ one of “en”, “en-us”, “en-gb”, “en-ca”, “en-au”
 
 
 
+## pre-commit.settings.typos.no-check-filenames
+
+
+
+Skip verifying spelling in file names.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.typos.no-check-files
+
+
+
+Skip verifying spelling in files.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.typos.no-unicode
+
+
+
+Only allow ASCII characters in identifiers.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.typos.quiet
+
+
+
+Less output per occurence.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
+## pre-commit.settings.typos.verbose
+
+
+
+More output per occurence.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+*Declared by:*
+ - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/hooks.nix)
+
+
+
 ## pre-commit.settings.typos.write
 
 
 
-Whether to fix spelling in files by writing them. Cannot be used with ` typos.settings.diff `.
+Fix spelling in files by writing them. Cannot be used with ` typos.settings.diff `.
 
 
 
@@ -7252,12 +9321,19 @@ Tool set from which ` nix-pre-commit-hooks ` will pick binaries.
 *Type:*
 lazy attribute set of (null or package)
 
+
+
+*Default:*
+` pre-commit-hooks.nix-pkgs.callPackage tools-dot-nix { inherit (pkgs) system; } `
+
 *Declared by:*
  - [https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/pre-commit.nix](https://github.com/cachix/pre-commit-hooks.nix/blob/master/modules/pre-commit.nix)
 
 
 
 ## process.after
+
+
 
 Bash code to execute after stopping processes.
 
@@ -7278,6 +9354,8 @@ strings concatenated with “\\n”
 
 ## process.before
 
+
+
 Bash code to execute before starting processes.
 
 
@@ -7297,7 +9375,9 @@ strings concatenated with “\\n”
 
 ## process.implementation
 
-The implementation used when performing ``devenv up``.
+
+
+The implementation used when performing ` devenv up `.
 
 
 
@@ -7307,7 +9387,7 @@ one of “honcho”, “overmind”, “process-compose”, “hivemind”
 
 
 *Default:*
-` "honcho" `
+` "process-compose" `
 
 
 
@@ -7321,8 +9401,9 @@ one of “honcho”, “overmind”, “process-compose”, “hivemind”
 
 ## process.process-compose
 
-Top-level process-compose.yaml options when that implementation is used.
 
+
+Top-level process-compose.yaml options when that implementation is used.
 
 
 
@@ -7360,6 +9441,8 @@ attribute set
 
 ## process-managers.hivemind.enable
 
+
+
 Whether to enable hivemind as process-manager.
 
 
@@ -7384,6 +9467,8 @@ boolean
 
 ## process-managers.hivemind.package
 
+
+
 The hivemind package to use.
 
 
@@ -7402,6 +9487,8 @@ package
 
 
 ## process-managers.honcho.enable
+
+
 
 Whether to enable honcho as process-manager.
 
@@ -7427,6 +9514,8 @@ boolean
 
 ## process-managers.honcho.package
 
+
+
 The honcho package to use.
 
 
@@ -7445,6 +9534,8 @@ package
 
 
 ## process-managers.overmind.enable
+
+
 
 Whether to enable overmind as process-manager.
 
@@ -7470,6 +9561,8 @@ boolean
 
 ## process-managers.overmind.package
 
+
+
 The overmind package to use.
 
 
@@ -7488,6 +9581,8 @@ package
 
 
 ## process-managers.process-compose.enable
+
+
 
 Whether to enable process-compose as process-manager.
 
@@ -7513,6 +9608,8 @@ boolean
 
 ## process-managers.process-compose.package
 
+
+
 The process-compose package to use.
 
 
@@ -7532,10 +9629,11 @@ package
 
 ## process-managers.process-compose.settings
 
+
+
 process-compose.yaml specific process attributes.
 
-Example: https://github.com/F1bonacc1/process-compose/blob/main/process-compose.yaml`
-
+Example: https://github.com/F1bonacc1/process-compose/blob/main/process-compose.yaml\`
 
 
 
@@ -7576,7 +9674,9 @@ YAML value
 
 ## processes
 
-Processes can be started with ``devenv up`` and run in foreground mode.
+
+
+Processes can be started with ` devenv up ` and run in foreground mode.
 
 
 
@@ -7595,6 +9695,8 @@ attribute set of (submodule)
 
 ## processes.\<name>.exec
 
+
+
 Bash code to run the process.
 
 
@@ -7609,12 +9711,13 @@ string
 
 ## processes.\<name>.process-compose
 
+
+
 process-compose.yaml specific process attributes.
 
-Example: https://github.com/F1bonacc1/process-compose/blob/main/process-compose.yaml`
+Example: https://github.com/F1bonacc1/process-compose/blob/main/process-compose.yaml\`
 
-Only used when using ``process.implementation = "process-compose";``
-
+Only used when using ` process.implementation = "process-compose"; `
 
 
 
@@ -7655,6 +9758,8 @@ attribute set
 
 ## scripts
 
+
+
 A set of scripts available when the environment is active.
 
 
@@ -7673,6 +9778,8 @@ attribute set of (submodule)
 
 
 ## scripts.\<name>.description
+
+
 
 Description of the script.
 
@@ -7693,6 +9800,8 @@ string
 
 ## scripts.\<name>.exec
 
+
+
 Bash code to execute when the script is run.
 
 
@@ -7706,6 +9815,8 @@ string
 
 
 ## services.adminer.enable
+
+
 
 Whether to enable Adminer process.
 
@@ -7731,6 +9842,8 @@ boolean
 
 ## services.adminer.package
 
+
+
 Which package of Adminer to use.
 
 
@@ -7750,6 +9863,8 @@ package
 
 ## services.adminer.listen
 
+
+
 Listen address for the Adminer.
 
 
@@ -7768,6 +9883,8 @@ string
 
 
 ## services.blackfire.enable
+
+
 
 Whether to enable Blackfire profiler agent
 
@@ -7796,6 +9913,8 @@ boolean
 
 ## services.blackfire.enableApm
 
+
+
 Whether to enable Enables application performance monitoring, requires special subscription.
 .
 
@@ -7821,6 +9940,8 @@ boolean
 
 ## services.blackfire.package
 
+
+
 Which package of blackfire to use
 
 
@@ -7840,9 +9961,10 @@ package
 
 ## services.blackfire.client-id
 
-Sets the client id used to authenticate with Blackfire.
-You can find your personal client-id at <https://blackfire.io/my/settings/credentials>.
 
+
+Sets the client id used to authenticate with Blackfire.
+You can find your personal client-id at [https://blackfire.io/my/settings/credentials](https://blackfire.io/my/settings/credentials).
 
 
 
@@ -7861,9 +9983,10 @@ string
 
 ## services.blackfire.client-token
 
-Sets the client token used to authenticate with Blackfire.
-You can find your personal client-token at <https://blackfire.io/my/settings/credentials>.
 
+
+Sets the client token used to authenticate with Blackfire.
+You can find your personal client-token at [https://blackfire.io/my/settings/credentials](https://blackfire.io/my/settings/credentials).
 
 
 
@@ -7882,9 +10005,10 @@ string
 
 ## services.blackfire.server-id
 
-Sets the server id used to authenticate with Blackfire.
-You can find your personal server-id at <https://blackfire.io/my/settings/credentials>.
 
+
+Sets the server id used to authenticate with Blackfire.
+You can find your personal server-id at [https://blackfire.io/my/settings/credentials](https://blackfire.io/my/settings/credentials).
 
 
 
@@ -7903,9 +10027,10 @@ string
 
 ## services.blackfire.server-token
 
-Sets the server token used to authenticate with Blackfire.
-You can find your personal server-token at <https://blackfire.io/my/settings/credentials>.
 
+
+Sets the server token used to authenticate with Blackfire.
+You can find your personal server-token at [https://blackfire.io/my/settings/credentials](https://blackfire.io/my/settings/credentials).
 
 
 
@@ -7924,8 +10049,9 @@ string
 
 ## services.blackfire.socket
 
-Sets the server socket path
 
+
+Sets the server socket path
 
 
 
@@ -7943,6 +10069,8 @@ string
 
 
 ## services.caddy.enable
+
+
 
 Whether to enable Caddy web server.
 
@@ -7968,8 +10096,9 @@ boolean
 
 ## services.caddy.package
 
-Caddy package to use.
 
+
+Caddy package to use.
 
 
 
@@ -7988,9 +10117,10 @@ package
 
 ## services.caddy.adapter
 
-Name of the config adapter to use.
-See <https://caddyserver.com/docs/config-adapters> for the full list.
 
+
+Name of the config adapter to use.
+See [https://caddyserver.com/docs/config-adapters](https://caddyserver.com/docs/config-adapters) for the full list.
 
 
 
@@ -8014,11 +10144,12 @@ string
 
 ## services.caddy.ca
 
-Certificate authority ACME server. The default (Let's Encrypt
-production server) should be fine for most people. Set it to null if
-you don't want to include any authority (or if you want to write a more
-fine-graned configuration manually).
 
+
+Certificate authority ACME server. The default (Let’s Encrypt
+production server) should be fine for most people. Set it to null if
+you don’t want to include any authority (or if you want to write a more
+fine-graned configuration manually).
 
 
 
@@ -8042,9 +10173,10 @@ null or string
 
 ## services.caddy.config
 
-Verbatim Caddyfile to use.
-Caddy v2 supports multiple config formats via adapters (see [`services.caddy.adapter`](#servicescaddyconfig)).
 
+
+Verbatim Caddyfile to use.
+Caddy v2 supports multiple config formats via adapters (see [` services.caddy.adapter `](\#servicescaddyconfig)).
 
 
 
@@ -8077,12 +10209,13 @@ strings concatenated with “\\n”
 
 ## services.caddy.dataDir
 
+
+
 The data directory, for storing certificates. Before 17.09, this
 would create a .caddy directory. With 17.09 the contents of the
 .caddy directory are in the specified data directory instead.
 Caddy v2 replaced CADDYPATH with XDG directories.
-See <https://caddyserver.com/docs/conventions#file-locations>.
-
+See [https://caddyserver.com/docs/conventions\#file-locations](https://caddyserver.com/docs/conventions\#file-locations).
 
 
 
@@ -8101,7 +10234,9 @@ path
 
 ## services.caddy.email
 
-Email address (for Let's Encrypt certificate).
+
+
+Email address (for Let’s Encrypt certificate).
 
 
 
@@ -8120,8 +10255,9 @@ string
 
 ## services.caddy.resume
 
-Use saved config, if any (and prefer over configuration passed with [`caddy.config`](#caddyconfig)).
 
+
+Use saved config, if any (and prefer over configuration passed with [` caddy.config `](\#caddyconfig)).
 
 
 
@@ -8139,6 +10275,8 @@ boolean
 
 
 ## services.caddy.virtualHosts
+
+
 
 Declarative vhost config.
 
@@ -8177,8 +10315,9 @@ attribute set of (submodule)
 
 ## services.caddy.virtualHosts.\<name>.extraConfig
 
-These lines go into the vhost verbatim.
 
+
+These lines go into the vhost verbatim.
 
 
 
@@ -8197,8 +10336,9 @@ strings concatenated with “\\n”
 
 ## services.caddy.virtualHosts.\<name>.serverAliases
 
-Additional names of virtual hosts served by this virtual host configuration.
 
+
+Additional names of virtual hosts served by this virtual host configuration.
 
 
 
@@ -8228,7 +10368,9 @@ list of string
 
 ## services.cassandra.enable
 
-Whether to enable Add Cassandra process script..
+
+
+Whether to enable Add Cassandra process script…
 
 
 
@@ -8251,6 +10393,8 @@ boolean
 
 
 ## services.cassandra.package
+
+
 
 Which version of Cassandra to use
 
@@ -8276,8 +10420,9 @@ package
 
 ## services.cassandra.allowClients
 
-Enables or disables the native transport server (CQL binary protocol)
 
+
+Enables or disables the native transport server (CQL binary protocol)
 
 
 
@@ -8295,6 +10440,8 @@ boolean
 
 
 ## services.cassandra.clusterName
+
+
 
 The name of the cluster
 
@@ -8315,8 +10462,9 @@ string
 
 ## services.cassandra.extraConfig
 
-Extra options to be merged into `cassandra.yaml` as nix attribute set.
 
+
+Extra options to be merged into ` cassandra.yaml ` as nix attribute set.
 
 
 
@@ -8345,6 +10493,8 @@ attribute set
 
 ## services.cassandra.jvmOpts
 
+
+
 Options to pass to the JVM through the JVM_OPTS environment variable
 
 
@@ -8363,6 +10513,8 @@ list of string
 
 
 ## services.cassandra.listenAddress
+
+
 
 Listen address
 
@@ -8388,6 +10540,8 @@ string
 
 ## services.cassandra.seedAddresses
 
+
+
 The addresses of hosts designated as contact points of the cluster
 
 
@@ -8411,6 +10565,8 @@ list of string
 
 
 ## services.clickhouse.enable
+
+
 
 Whether to enable clickhouse-server.
 
@@ -8436,6 +10592,8 @@ boolean
 
 ## services.clickhouse.package
 
+
+
 Which package of clickhouse to use
 
 
@@ -8455,6 +10613,8 @@ package
 
 ## services.clickhouse.config
 
+
+
 ClickHouse configuration in YAML.
 
 
@@ -8468,6 +10628,8 @@ strings concatenated with “\\n”
 
 
 ## services.clickhouse.port
+
+
 
 Which port to run clickhouse on
 
@@ -8487,6 +10649,8 @@ signed integer
 
 
 ## services.cockroachdb.enable
+
+
 
 Whether to enable Add CockroachDB process.
 .
@@ -8513,6 +10677,8 @@ boolean
 
 ## services.cockroachdb.package
 
+
+
 The CockroachDB package to use.
 
 
@@ -8532,8 +10698,9 @@ unspecified value
 
 ## services.cockroachdb.http_addr
 
-The hostname or IP address to bind to for HTTP requests.
 
+
+The hostname or IP address to bind to for HTTP requests.
 
 
 
@@ -8552,8 +10719,9 @@ string
 
 ## services.cockroachdb.listen_addr
 
-The address/hostname and port to listen on.
 
+
+The address/hostname and port to listen on.
 
 
 
@@ -8571,6 +10739,8 @@ string
 
 
 ## services.couchdb.enable
+
+
 
 Whether to enable CouchDB process.
 
@@ -8596,6 +10766,8 @@ boolean
 
 ## services.couchdb.package
 
+
+
 Which version of CouchDB to use
 
 
@@ -8615,17 +10787,18 @@ package
 
 ## services.couchdb.settings
 
+
+
 CouchDB configuration.
 to know more about all settings, look at:
-<link
-  xlink:href="https://docs.couchdb.org/en/stable/config/couchdb.html"
+\<link
+xlink:href=“https://docs.couchdb.org/en/stable/config/couchdb.html”
 />
 
 
 
-
 *Type:*
-attribute set of attribute set of (INI atom (null, bool, int, float or string))
+attribute set of section of an INI file (attrs of INI atom (null, bool, int, float or string))
 
 
 
@@ -8704,10 +10877,11 @@ Defined the port number to listen.
 
 ## services.couchdb.settings.couchdb.database_dir
 
-Specifies location of CouchDB database files (*.couch named). This
+
+
+Specifies location of CouchDB database files (\*.couch named). This
 location should be writable and readable for the user the CouchDB
 service runs as (couchdb by default).
-
 
 
 
@@ -8726,10 +10900,11 @@ path
 
 ## services.couchdb.settings.couchdb.single_node
 
+
+
 When this configuration setting is set to true, automatically create
 the system databases on startup. Must be set false for a clustered
 CouchDB installation.
-
 
 
 
@@ -8748,12 +10923,13 @@ boolean
 
 ## services.couchdb.settings.couchdb.uri_file
 
+
+
 This file contains the full URI that can be used to access this
 instance of CouchDB. It is used to help discover the port CouchDB is
 running on (if it was set to 0 (e.g. automatically assigned any free
 one). This file should be writable and readable for the user that
 runs the CouchDB service (couchdb by default).
-
 
 
 
@@ -8772,10 +10948,11 @@ path
 
 ## services.couchdb.settings.couchdb.view_index_dir
 
+
+
 Specifies location of CouchDB view index files. This location should
 be writable and readable for the user that runs the CouchDB service
 (couchdb by default).
-
 
 
 
@@ -8793,6 +10970,8 @@ path
 
 
 ## services.dynamodb-local.enable
+
+
 
 Whether to enable DynamoDB Local.
 
@@ -8818,6 +10997,8 @@ boolean
 
 ## services.dynamodb-local.package
 
+
+
 Which package of DynamoDB to use.
 
 
@@ -8837,6 +11018,8 @@ package
 
 ## services.dynamodb-local.port
 
+
+
 Listen address for the Dynamodb-local.
 
 
@@ -8855,6 +11038,8 @@ Listen address for the Dynamodb-local.
 
 
 ## services.elasticmq.enable
+
+
 
 Whether to enable elasticmq-server.
 
@@ -8880,6 +11065,8 @@ boolean
 
 ## services.elasticmq.package
 
+
+
 Which package of elasticmq-server-bin to use
 
 
@@ -8898,6 +11085,8 @@ package
 
 
 ## services.elasticmq.settings
+
+
 
 Configuration for elasticmq-server
 
@@ -8918,6 +11107,8 @@ strings concatenated with “\\n”
 
 ## services.elasticsearch.enable
 
+
+
 Whether to enable elasticsearch.
 
 
@@ -8936,6 +11127,8 @@ boolean
 
 
 ## services.elasticsearch.package
+
+
 
 Elasticsearch package to use.
 
@@ -8956,6 +11149,8 @@ package
 
 ## services.elasticsearch.cluster_name
 
+
+
 Elasticsearch name that identifies your cluster for auto-discovery.
 
 
@@ -8975,6 +11170,8 @@ string
 
 ## services.elasticsearch.extraCmdLineOptions
 
+
+
 Extra command line options for the elasticsearch launcher.
 
 
@@ -8993,6 +11190,8 @@ list of string
 
 
 ## services.elasticsearch.extraConf
+
+
 
 Extra configuration for elasticsearch.
 
@@ -9025,6 +11224,8 @@ string
 
 ## services.elasticsearch.extraJavaOptions
 
+
+
 Extra command line options for Java.
 
 
@@ -9054,6 +11255,8 @@ list of string
 
 ## services.elasticsearch.listenAddress
 
+
+
 Elasticsearch listen address.
 
 
@@ -9072,6 +11275,8 @@ string
 
 
 ## services.elasticsearch.logging
+
+
 
 Elasticsearch logging configuration.
 
@@ -9104,6 +11309,8 @@ string
 
 ## services.elasticsearch.plugins
 
+
+
 Extra elasticsearch plugins
 
 
@@ -9128,6 +11335,8 @@ list of package
 
 ## services.elasticsearch.port
 
+
+
 Elasticsearch port to listen for HTTP traffic.
 
 
@@ -9146,6 +11355,8 @@ signed integer
 
 
 ## services.elasticsearch.single_node
+
+
 
 Start a single-node cluster
 
@@ -9166,6 +11377,8 @@ boolean
 
 ## services.elasticsearch.tcp_port
 
+
+
 Elasticsearch port for the node to node communication.
 
 
@@ -9184,6 +11397,8 @@ signed integer
 
 
 ## services.influxdb.enable
+
+
 
 Whether to enable influxdb.
 
@@ -9209,6 +11424,8 @@ boolean
 
 ## services.influxdb.package
 
+
+
 An open-source distributed time series database
 
 
@@ -9228,6 +11445,8 @@ package
 
 ## services.influxdb.config
 
+
+
 Configuration for InfluxDB-server
 
 
@@ -9246,6 +11465,8 @@ strings concatenated with “\\n”
 
 
 ## services.mailhog.enable
+
+
 
 Whether to enable mailhog process.
 
@@ -9271,6 +11492,8 @@ boolean
 
 ## services.mailhog.package
 
+
+
 Which package of mailhog to use
 
 
@@ -9290,8 +11513,9 @@ package
 
 ## services.mailhog.additionalArgs
 
-Additional arguments passed to `mailhog`.
 
+
+Additional arguments passed to ` mailhog `.
 
 
 
@@ -9320,6 +11544,8 @@ list of strings concatenated with “\\n”
 
 ## services.mailhog.apiListenAddress
 
+
+
 Listen address for API.
 
 
@@ -9338,6 +11564,8 @@ string
 
 
 ## services.mailhog.smtpListenAddress
+
+
 
 Listen address for SMTP.
 
@@ -9358,6 +11586,8 @@ string
 
 ## services.mailhog.uiListenAddress
 
+
+
 Listen address for UI.
 
 
@@ -9376,6 +11606,8 @@ string
 
 
 ## services.mailpit.enable
+
+
 
 Whether to enable mailpit process.
 
@@ -9401,6 +11633,8 @@ boolean
 
 ## services.mailpit.package
 
+
+
 Which package of mailpit to use
 
 
@@ -9420,8 +11654,9 @@ package
 
 ## services.mailpit.additionalArgs
 
-Additional arguments passed to `mailpit`.
 
+
+Additional arguments passed to ` mailpit `.
 
 
 
@@ -9450,6 +11685,8 @@ list of strings concatenated with “\\n”
 
 ## services.mailpit.smtpListenAddress
 
+
+
 Listen address for SMTP.
 
 
@@ -9469,6 +11706,8 @@ string
 
 ## services.mailpit.uiListenAddress
 
+
+
 Listen address for UI.
 
 
@@ -9487,6 +11726,8 @@ string
 
 
 ## services.meilisearch.enable
+
+
 
 Whether to enable Meilisearch.
 
@@ -9512,6 +11753,8 @@ boolean
 
 ## services.meilisearch.environment
 
+
+
 Defines the running environment of Meilisearch.
 
 
@@ -9530,6 +11773,8 @@ one of “development”, “production”
 
 
 ## services.meilisearch.listenAddress
+
+
 
 Meilisearch listen address.
 
@@ -9550,6 +11795,8 @@ string
 
 ## services.meilisearch.listenPort
 
+
+
 Meilisearch port to listen on.
 
 
@@ -9569,14 +11816,16 @@ Meilisearch port to listen on.
 
 ## services.meilisearch.logLevel
 
-Defines how much detail should be present in Meilisearch's logs.
-Meilisearch currently supports four log levels, listed in order of increasing verbosity:
-- 'ERROR': only log unexpected events indicating Meilisearch is not functioning as expected
-- 'WARN:' log all unexpected events, regardless of their severity
-- 'INFO:' log all events. This is the default value
-- 'DEBUG': log all events and including detailed information on Meilisearch's internal processes.
-  Useful when diagnosing issues and debugging
 
+
+Defines how much detail should be present in Meilisearch’s logs.
+Meilisearch currently supports four log levels, listed in order of increasing verbosity:
+
+ - ‘ERROR’: only log unexpected events indicating Meilisearch is not functioning as expected
+ - ‘WARN:’ log all unexpected events, regardless of their severity
+ - ‘INFO:’ log all events. This is the default value
+ - ‘DEBUG’: log all events and including detailed information on Meilisearch’s internal processes.
+   Useful when diagnosing issues and debugging
 
 
 
@@ -9595,11 +11844,12 @@ string
 
 ## services.meilisearch.maxIndexSize
 
+
+
 Sets the maximum size of the index.
 Value must be given in bytes or explicitly stating a base unit.
-For example, the default value can be written as 107374182400, '107.7Gb', or '107374 Mb'.
+For example, the default value can be written as 107374182400, ‘107.7Gb’, or ‘107374 Mb’.
 Default is 100 GiB
-
 
 
 
@@ -9618,11 +11868,12 @@ string
 
 ## services.meilisearch.noAnalytics
 
+
+
 Deactivates analytics.
 Analytics allow Meilisearch to know how many users are using Meilisearch,
 which versions and which platforms are used.
 This process is entirely anonymous.
-
 
 
 
@@ -9640,6 +11891,8 @@ boolean
 
 
 ## services.memcached.enable
+
+
 
 Whether to enable memcached process.
 
@@ -9665,6 +11918,8 @@ boolean
 
 ## services.memcached.package
 
+
+
 Which package of memcached to use
 
 
@@ -9684,9 +11939,10 @@ package
 
 ## services.memcached.bind
 
-The IP interface to bind to.
-`null` means "all interfaces".
 
+
+The IP interface to bind to.
+` null ` means “all interfaces”.
 
 
 
@@ -9710,9 +11966,10 @@ null or string
 
 ## services.memcached.port
 
+
+
 The TCP port to accept connections.
 If port 0 is specified Redis will not listen on a TCP socket.
-
 
 
 
@@ -9731,8 +11988,9 @@ If port 0 is specified Redis will not listen on a TCP socket.
 
 ## services.memcached.startArgs
 
-Additional arguments passed to `memcached` during startup.
 
+
+Additional arguments passed to ` memcached ` during startup.
 
 
 
@@ -9761,6 +12019,8 @@ list of strings concatenated with “\\n”
 
 ## services.minio.enable
 
+
+
 Whether to enable MinIO Object Storage.
 
 
@@ -9785,6 +12045,8 @@ boolean
 
 ## services.minio.package
 
+
+
 MinIO package to use.
 
 
@@ -9804,8 +12066,9 @@ package
 
 ## services.minio.accessKey
 
-Access key of 5 to 20 characters in length that clients use to access the server.
 
+
+Access key of 5 to 20 characters in length that clients use to access the server.
 
 
 
@@ -9823,6 +12086,8 @@ string
 
 
 ## services.minio.afterStart
+
+
 
 Bash code to execute after minio is running.
 
@@ -9853,6 +12118,8 @@ strings concatenated with “\\n”
 
 ## services.minio.browser
 
+
+
 Enable or disable access to web UI.
 
 
@@ -9872,8 +12139,9 @@ boolean
 
 ## services.minio.buckets
 
-List of buckets to ensure exist on startup.
 
+
+List of buckets to ensure exist on startup.
 
 
 
@@ -9892,11 +12160,12 @@ list of string
 
 ## services.minio.clientConfig
 
-Contents of the mc `config.json`, as a nix attribute set.
 
-By default, `local` is configured to connect to the devenv minio service.
-Use `lib.mkForce null` to use your regular mc configuration from `$HOME/.mc` instead.
 
+Contents of the mc ` config.json `, as a nix attribute set.
+
+By default, ` local ` is configured to connect to the devenv minio service.
+Use ` lib.mkForce null ` to use your regular mc configuration from ` $HOME/.mc ` instead.
 
 
 
@@ -9909,6 +12178,8 @@ null or JSON value
 
 
 ## services.minio.clientPackage
+
+
 
 MinIO client package to use.
 
@@ -9929,6 +12200,8 @@ package
 
 ## services.minio.consoleAddress
 
+
+
 IP address and port of the web UI (console).
 
 
@@ -9947,6 +12220,8 @@ string
 
 
 ## services.minio.listenAddress
+
+
 
 IP address and port of the server.
 
@@ -9967,8 +12242,9 @@ string
 
 ## services.minio.region
 
-The physical location of the server. By default it is set to us-east-1, which is same as AWS S3's and MinIO's default region.
 
+
+The physical location of the server. By default it is set to us-east-1, which is same as AWS S3’s and MinIO’s default region.
 
 
 
@@ -9987,8 +12263,9 @@ string
 
 ## services.minio.secretKey
 
-Specify the Secret key of 8 to 40 characters in length that clients use to access the server.
 
+
+Specify the Secret key of 8 to 40 characters in length that clients use to access the server.
 
 
 
@@ -10006,6 +12283,8 @@ string
 
 
 ## services.mongodb.enable
+
+
 
 Whether to enable MongoDB process and expose utilities.
 
@@ -10031,6 +12310,8 @@ boolean
 
 ## services.mongodb.package
 
+
+
 Which MongoDB package to use.
 
 
@@ -10050,8 +12331,9 @@ package
 
 ## services.mongodb.additionalArgs
 
-Additional arguments passed to `mongod`.
 
+
+Additional arguments passed to ` mongod `.
 
 
 
@@ -10087,6 +12369,8 @@ list of strings concatenated with “\\n”
 
 ## services.mysql.enable
 
+
+
 Whether to enable MySQL process and expose utilities.
 
 
@@ -10111,6 +12395,8 @@ boolean
 
 ## services.mysql.package
 
+
+
 Which package of MySQL to use
 
 
@@ -10130,13 +12416,14 @@ package
 
 ## services.mysql.ensureUsers
 
+
+
 Ensures that the specified users exist and have at least the ensured permissions.
 The MySQL users will be identified using Unix socket authentication. This authenticates the Unix user with the
 same name only, and that without the need for a password.
 This option will never delete existing users or remove permissions, especially not when the value of this
 option is changed. This means that users created and permissions assigned once through this option or
 otherwise have to be removed manually.
-
 
 
 
@@ -10171,6 +12458,8 @@ list of (submodule)
 
 ## services.mysql.ensureUsers.\*.ensurePermissions
 
+
+
 Permissions to ensure for the user, specified as attribute set.
 The attribute names specify the database and tables to grant the permissions for,
 separated by a dot. You may use wildcards here.
@@ -10179,8 +12468,7 @@ You may specify one or multiple comma-separated SQL privileges here.
 For more information on how to specify the target
 and on which privileges exist, see the
 [GRANT syntax](https://mariadb.com/kb/en/library/grant/).
-The attributes are used as `GRANT ${attrName} ON ${attrValue}`.
-
+The attributes are used as ` GRANT ${attrName} ON ${attrValue} `.
 
 
 
@@ -10211,8 +12499,9 @@ attribute set of string
 
 ## services.mysql.ensureUsers.\*.name
 
-Name of the user to ensure.
 
+
+Name of the user to ensure.
 
 
 
@@ -10226,8 +12515,9 @@ string
 
 ## services.mysql.ensureUsers.\*.password
 
-Password of the user to ensure.
 
+
+Password of the user to ensure.
 
 
 
@@ -10246,8 +12536,9 @@ null or string
 
 ## services.mysql.importTimeZones
 
-Whether to import tzdata on the first startup of the mysql server
 
+
+Whether to import tzdata on the first startup of the mysql server
 
 
 
@@ -10266,9 +12557,10 @@ null or boolean
 
 ## services.mysql.initialDatabases
 
+
+
 List of database names and their initial schemas that should be used to create databases on the first startup
 of MySQL. The schema attribute is optional: If not specified, an empty database is created.
-
 
 
 
@@ -10299,8 +12591,9 @@ list of (submodule)
 
 ## services.mysql.initialDatabases.\*.name
 
-The name of the database to create.
 
+
+The name of the database to create.
 
 
 
@@ -10314,9 +12607,10 @@ string
 
 ## services.mysql.initialDatabases.\*.schema
 
+
+
 The initial schema of the database; if null (the default),
 an empty database is created.
-
 
 
 
@@ -10335,8 +12629,9 @@ null or path
 
 ## services.mysql.settings
 
-MySQL configuration.
 
+
+MySQL configuration.
 
 
 
@@ -10375,11 +12670,12 @@ lazy attribute set of lazy attribute set of anything
 
 ## services.mysql.useDefaultsExtraFile
 
+
+
 Whether to use defaults-exta-file for the mysql command instead of defaults-file.
 This is useful if you want to provide a config file on the command line.
 However this can problematic if you have MySQL installed globaly because its config might leak into your environment.
 This option does not affect the mysqld command.
-
 
 
 
@@ -10397,6 +12693,8 @@ boolean
 
 
 ## services.nginx.enable
+
+
 
 Whether to enable nginx.
 
@@ -10421,6 +12719,8 @@ boolean
 
 
 ## services.nginx.package
+
+
 
 The nginx package to use.
 
@@ -10469,6 +12769,8 @@ path
 
 ## services.nginx.eventsConfig
 
+
+
 The nginx events configuration.
 
 
@@ -10487,6 +12789,8 @@ strings concatenated with “\\n”
 
 
 ## services.nginx.httpConfig
+
+
 
 The nginx configuration.
 
@@ -10554,6 +12858,8 @@ package
 
 ## services.opensearch.extraCmdLineOptions
 
+
+
 Extra command line options for the OpenSearch launcher.
 
 
@@ -10572,6 +12878,8 @@ list of string
 
 
 ## services.opensearch.extraJavaOptions
+
+
 
 Extra command line options for Java.
 
@@ -10761,6 +13069,8 @@ The port to listen on for transport traffic.
 
 ## services.postgres.enable
 
+
+
 Whether to enable Add PostgreSQL process.
 .
 
@@ -10786,8 +13096,9 @@ boolean
 
 ## services.postgres.package
 
-The PostgreSQL package to use. Use this to override the default with a specific version.
 
+
+The PostgreSQL package to use. Use this to override the default with a specific version.
 
 
 
@@ -10815,8 +13126,9 @@ pkgs.postgresql_15
 
 ## services.postgres.createDatabase
 
-Create a database named like current user on startup. Only applies when initialDatabases is an empty list.
 
+
+Create a database named like current user on startup. Only applies when initialDatabases is an empty list.
 
 
 
@@ -10835,50 +13147,64 @@ boolean
 
 ## services.postgres.extensions
 
+
+
 Additional PostgreSQL extensions to install.
 
 The available extensions are:
 
-- age
-- cstore_fdw
-- jsonb_deep_sum
-- periods
-- pg_auto_failover
-- pg_bigm
-- pg_cron
-- pg_ed25519
-- pg_hint_plan
-- pg_hll
-- pg_ivm
-- pg_partman
-- pg_rational
-- pg_relusage
-- pg_repack
-- pg_safeupdate
-- pg_similarity
-- pg_topn
-- pgaudit
-- pgjwt
-- pgroonga
-- pgrouting
-- pgtap
-- pgvector
-- pipelinedb
-- plpgsql_check
-- plr
-- plv8
-- postgis
-- repmgr
-- rum
-- smlar
-- tds_fdw
-- temporal_tables
-- timescaledb
-- timescaledb_toolkit
-- tsearch_extras
-- wal2json
-
-
+ - age
+ - apache_datasketches
+ - citus
+ - cstore_fdw
+ - h3-pg
+ - hypopg
+ - jsonb_deep_sum
+ - lantern
+ - periods
+ - pg_auto_failover
+ - pg_bigm
+ - pg_cron
+ - pg_ed25519
+ - pg_embedding
+ - pg_hint_plan
+ - pg_hll
+ - pg_ivm
+ - pg_net
+ - pg_partman
+ - pg_rational
+ - pg_relusage
+ - pg_repack
+ - pg_safeupdate
+ - pg_similarity
+ - pg_squeeze
+ - pg_topn
+ - pg_uuidv7
+ - pgaudit
+ - pgjwt
+ - pgroonga
+ - pgrouting
+ - pgsodium
+ - pgsql-http
+ - pgtap
+ - pgvecto-rs
+ - pgvector
+ - plpgsql_check
+ - plr
+ - plv8
+ - postgis
+ - promscale_extension
+ - repmgr
+ - rum
+ - smlar
+ - tds_fdw
+ - temporal_tables
+ - timescaledb
+ - timescaledb-apache
+ - timescaledb_toolkit
+ - tsearch_extras
+ - tsja
+ - wal2json
 
 
 
@@ -10910,9 +13236,10 @@ extensions: [
 
 ## services.postgres.initdbArgs
 
-Additional arguments passed to `initdb` during data dir
-initialisation.
 
+
+Additional arguments passed to ` initdb ` during data dir
+initialisation.
 
 
 
@@ -10948,9 +13275,10 @@ list of strings concatenated with “\\n”
 
 ## services.postgres.initialDatabases
 
+
+
 List of database names and their initial schemas that should be used to create databases on the first startup
 of Postgres. The schema attribute is optional: If not specified, an empty database is created.
-
 
 
 
@@ -10984,8 +13312,9 @@ list of (submodule)
 
 ## services.postgres.initialDatabases.\*.name
 
-The name of the database to create.
 
+
+The name of the database to create.
 
 
 
@@ -10999,9 +13328,10 @@ string
 
 ## services.postgres.initialDatabases.\*.schema
 
+
+
 The initial schema of the database; if null (the default),
 an empty database is created.
-
 
 
 
@@ -11020,9 +13350,10 @@ null or path
 
 ## services.postgres.initialScript
 
+
+
 Initial SQL commands to run during database initialization. This can be multiple
 SQL expressions separated by a semi-colon.
-
 
 
 
@@ -11039,8 +13370,8 @@ null or string
 *Example:*
 
 ```
-CREATE USER postgres SUPERUSER;
-CREATE USER bar;
+CREATE ROLE postgres SUPERUSER;
+CREATE ROLE bar;
 
 ```
 
@@ -11050,6 +13381,8 @@ CREATE USER bar;
 
 
 ## services.postgres.listen_addresses
+
+
 
 Listen address
 
@@ -11075,8 +13408,9 @@ string
 
 ## services.postgres.port
 
-The TCP port to accept connections.
 
+
+The TCP port to accept connections.
 
 
 
@@ -11095,13 +13429,14 @@ The TCP port to accept connections.
 
 ## services.postgres.settings
 
+
+
 PostgreSQL configuration. Refer to
-<https://www.postgresql.org/docs/11/config-setting.html#CONFIG-SETTING-CONFIGURATION-FILE>
-for an overview of `postgresql.conf`.
+[https://www.postgresql.org/docs/11/config-setting.html\#CONFIG-SETTING-CONFIGURATION-FILE](https://www.postgresql.org/docs/11/config-setting.html\#CONFIG-SETTING-CONFIGURATION-FILE)
+for an overview of ` postgresql.conf `.
 
 String values will automatically be enclosed in single quotes. Single quotes will be
 escaped with two single quotes as described by the upstream documentation linked above.
-
 
 
 
@@ -11135,9 +13470,10 @@ attribute set of (boolean or floating point number or signed integer or string)
 
 ## services.rabbitmq.enable
 
+
+
 Whether to enable the RabbitMQ server, an Advanced Message
 Queuing Protocol (AMQP) broker.
-
 
 
 
@@ -11156,8 +13492,9 @@ boolean
 
 ## services.rabbitmq.package
 
-Which rabbitmq package to use.
 
+
+Which rabbitmq package to use.
 
 
 
@@ -11176,18 +13513,19 @@ package
 
 ## services.rabbitmq.configItems
 
-Configuration options in RabbitMQ's new config file format,
+
+
+Configuration options in RabbitMQ’s new config file format,
 which is a simple key-value format that can not express nested
-data structures. This is known as the `rabbitmq.conf` file,
+data structures. This is known as the ` rabbitmq.conf ` file,
 although outside NixOS that filename may have Erlang syntax, particularly
 prior to RabbitMQ 3.7.0.
 If you do need to express nested data structures, you can use
-`config` option. Configuration from `config`
+` config ` option. Configuration from ` config `
 will be merged into these options by RabbitMQ at runtime to
 form the final configuration.
-See <https://www.rabbitmq.com/configure.html#config-items>
-For the distinct formats, see <https://www.rabbitmq.com/configure.html#config-file-formats>
-
+See [https://www.rabbitmq.com/configure.html\#config-items](https://www.rabbitmq.com/configure.html\#config-items)
+For the distinct formats, see [https://www.rabbitmq.com/configure.html\#config-file-formats](https://www.rabbitmq.com/configure.html\#config-file-formats)
 
 
 
@@ -11218,10 +13556,11 @@ attribute set of string
 
 ## services.rabbitmq.cookie
 
+
+
 Erlang cookie is a string of arbitrary length which must
 be the same for several nodes to be allowed to communicate.
 Leave empty to generate automatically.
-
 
 
 
@@ -11240,16 +13579,17 @@ string
 
 ## services.rabbitmq.listenAddress
 
+
+
 IP address on which RabbitMQ will listen for AMQP
 connections.  Set to the empty string to listen on all
 interfaces.  Note that RabbitMQ creates a user named
-`guest` with password
-`guest` by default, so you should delete
+` guest ` with password
+` guest ` by default, so you should delete
 this user if you intend to allow external access.
-Together with 'port' setting it's mostly an alias for
-configItems."listeners.tcp.1" and it's left for backwards
+Together with ‘port’ setting it’s mostly an alias for
+configItems.“listeners.tcp.1” and it’s left for backwards
 compatibility with previous version of this module.
-
 
 
 
@@ -11272,6 +13612,8 @@ string
 
 
 ## services.rabbitmq.managementPlugin.enable
+
+
 
 Whether to enable the management plugin.
 
@@ -11297,8 +13639,9 @@ boolean
 
 ## services.rabbitmq.managementPlugin.port
 
-On which port to run the management plugin
 
+
+On which port to run the management plugin
 
 
 
@@ -11317,13 +13660,14 @@ On which port to run the management plugin
 
 ## services.rabbitmq.nodeName
 
+
+
 The name of the RabbitMQ node.  This is used to identify
 the node in a cluster.  If you are running multiple
 RabbitMQ nodes on the same machine, you must give each
 node a unique name.  The name must be of the form
-`name@host`, where `name` is an arbitrary name and
-`host` is the domain name of the host.
-
+` name@host `, where ` name ` is an arbitrary name and
+` host ` is the domain name of the host.
 
 
 
@@ -11341,6 +13685,8 @@ string
 
 
 ## services.rabbitmq.pluginDirs
+
+
 
 The list of directories containing external plugins
 
@@ -11361,6 +13707,8 @@ list of path
 
 ## services.rabbitmq.plugins
 
+
+
 The names of plugins to enable
 
 
@@ -11380,8 +13728,9 @@ list of string
 
 ## services.rabbitmq.port
 
-Port on which RabbitMQ will listen for AMQP connections.
 
+
+Port on which RabbitMQ will listen for AMQP connections.
 
 
 
@@ -11399,6 +13748,8 @@ Port on which RabbitMQ will listen for AMQP connections.
 
 
 ## services.redis.enable
+
+
 
 Whether to enable Redis process and expose utilities.
 
@@ -11424,6 +13775,8 @@ boolean
 
 ## services.redis.package
 
+
+
 Which package of Redis to use
 
 
@@ -11443,9 +13796,10 @@ package
 
 ## services.redis.bind
 
-The IP interface to bind to.
-`null` means "all interfaces".
 
+
+The IP interface to bind to.
+` null ` means “all interfaces”.
 
 
 
@@ -11469,7 +13823,9 @@ null or string
 
 ## services.redis.extraConfig
 
-Additional text to be appended to `redis.conf`.
+
+
+Additional text to be appended to ` redis.conf `.
 
 
 
@@ -11488,9 +13844,10 @@ strings concatenated with “\\n”
 
 ## services.redis.port
 
+
+
 The TCP port to accept connections.
 If port 0 is specified Redis, will not listen on a TCP socket.
-
 
 
 
@@ -11508,6 +13865,8 @@ If port 0 is specified Redis, will not listen on a TCP socket.
 
 
 ## services.temporal.enable
+
+
 
 Whether to enable Temporal process.
 
@@ -11533,6 +13892,8 @@ boolean
 
 ## services.temporal.package
 
+
+
 Which package of Temporal to use.
 
 
@@ -11551,6 +13912,8 @@ package
 
 
 ## services.temporal.ip
+
+
 
 IPv4 address to bind the frontend service to.
 
@@ -11571,7 +13934,9 @@ string
 
 ## services.temporal.namespaces
 
-Specify namespaces that should be pre-created (namespace "default" is always created).
+
+
+Specify namespaces that should be pre-created (namespace “default” is always created).
 
 
 
@@ -11601,6 +13966,8 @@ list of string
 
 ## services.temporal.port
 
+
+
 Port for the frontend gRPC service.
 
 
@@ -11619,6 +13986,8 @@ Port for the frontend gRPC service.
 
 
 ## services.temporal.state
+
+
 
 State configuration.
 
@@ -11639,6 +14008,8 @@ submodule
 
 ## services.temporal.state.ephemeral
 
+
+
 When enabled, the Temporal state gets lost when the process exists.
 
 
@@ -11657,6 +14028,8 @@ boolean
 
 
 ## services.temporal.state.sqlite-pragma
+
+
 
 Sqlite pragma statements
 
@@ -11688,6 +14061,8 @@ attribute set of string
 
 ## services.temporal.ui
 
+
+
 UI configuration.
 
 
@@ -11706,6 +14081,8 @@ submodule
 
 
 ## services.temporal.ui.enable
+
+
 
 Enable the Web UI.
 
@@ -11726,6 +14103,8 @@ boolean
 
 ## services.temporal.ui.ip
 
+
+
 IPv4 address to bind the Web UI to.
 
 
@@ -11745,6 +14124,8 @@ string
 
 ## services.temporal.ui.port
 
+
+
 Port for the Web UI.
 
 
@@ -11763,6 +14144,8 @@ Port for the Web UI.
 
 
 ## services.varnish.enable
+
+
 
 Whether to enable Varnish process and expose utilities.
 
@@ -11787,6 +14170,8 @@ boolean
 
 
 ## services.varnish.package
+
+
 
 Which Varnish package to use.
 
@@ -11833,6 +14218,8 @@ list of package
 
 ## services.varnish.listen
 
+
+
 Which address to listen on.
 
 
@@ -11852,6 +14239,8 @@ string
 
 ## services.varnish.memorySize
 
+
+
 How much memory to allocate to Varnish.
 
 
@@ -11870,6 +14259,8 @@ string
 
 
 ## services.varnish.vcl
+
+
 
 Varnish VCL configuration.
 
@@ -11900,6 +14291,8 @@ strings concatenated with “\\n”
 
 ## services.vault.enable
 
+
+
 Whether to enable vault process.
 
 
@@ -11924,6 +14317,8 @@ boolean
 
 ## services.vault.package
 
+
+
 Which package of Vault to use.
 
 
@@ -11943,8 +14338,9 @@ package
 
 ## services.vault.address
 
-Specifies the address to bind to for listening
 
+
+Specifies the address to bind to for listening
 
 
 
@@ -11963,8 +14359,9 @@ string
 
 ## services.vault.disableClustering
 
-Specifies whether clustering features such as request forwarding are enabled
 
+
+Specifies whether clustering features such as request forwarding are enabled
 
 
 
@@ -11983,8 +14380,9 @@ boolean
 
 ## services.vault.disableMlock
 
-Disables the server from executing the mlock syscall
 
+
+Disables the server from executing the mlock syscall
 
 
 
@@ -12003,8 +14401,9 @@ boolean
 
 ## services.vault.ui
 
-Enables the built-in web UI
 
+
+Enables the built-in web UI
 
 
 
@@ -12022,6 +14421,8 @@ boolean
 
 
 ## services.wiremock.enable
+
+
 
 Whether to enable WireMock.
 
@@ -12047,8 +14448,9 @@ boolean
 
 ## services.wiremock.package
 
-Which package of WireMock to use.
 
+
+Which package of WireMock to use.
 
 
 
@@ -12067,8 +14469,9 @@ package
 
 ## services.wiremock.disableBanner
 
-Whether to disable print banner logo.
 
+
+Whether to disable print banner logo.
 
 
 
@@ -12087,9 +14490,10 @@ boolean
 
 ## services.wiremock.mappings
 
-The mappings to mock.
-See the JSON examples on <https://wiremock.org/docs/stubbing/> for more information.
 
+
+The mappings to mock.
+See the JSON examples on [https://wiremock.org/docs/stubbing/](https://wiremock.org/docs/stubbing/) for more information.
 
 
 
@@ -12142,8 +14546,9 @@ JSON value
 
 ## services.wiremock.port
 
-The port number for the HTTP server to listen on.
 
+
+The port number for the HTTP server to listen on.
 
 
 
@@ -12162,8 +14567,9 @@ signed integer
 
 ## services.wiremock.verbose
 
-Whether to log verbosely to stdout.
 
+
+Whether to log verbosely to stdout.
 
 
 
@@ -12181,6 +14587,8 @@ boolean
 
 
 ## starship.enable
+
+
 
 Whether to enable the Starship.rs command prompt.
 
@@ -12206,6 +14614,8 @@ boolean
 
 ## starship.package
 
+
+
 The Starship package to use.
 
 
@@ -12224,6 +14634,8 @@ package
 
 
 ## starship.config.enable
+
+
 
 Whether to enable Starship config override.
 
@@ -12249,6 +14661,8 @@ boolean
 
 ## starship.config.path
 
+
+
 The Starship configuration file to use.
 
 
@@ -12263,5 +14677,58 @@ path
 
 *Declared by:*
  - [https://github.com/cachix/devenv/blob/main/src/modules/integrations/starship.nix](https://github.com/cachix/devenv/blob/main/src/modules/integrations/starship.nix)
+
+
+
+## unsetEnvVars
+
+
+
+Remove these list of env vars from being exported to keep the shell/direnv more lean.
+
+
+
+*Type:*
+list of string
+
+
+
+*Default:*
+
+```
+[
+  "HOST_PATH"
+  "NIX_BUILD_CORES"
+  "__structuredAttrs"
+  "buildInputs"
+  "buildPhase"
+  "builder"
+  "depsBuildBuild"
+  "depsBuildBuildPropagated"
+  "depsBuildTarget"
+  "depsBuildTargetPropagated"
+  "depsHostHost"
+  "depsHostHostPropagated"
+  "depsTargetTarget"
+  "depsTargetTargetPropagated"
+  "doCheck"
+  "doInstallCheck"
+  "nativeBuildInputs"
+  "out"
+  "outputs"
+  "patches"
+  "phases"
+  "preferLocalBuild"
+  "propagatedBuildInputs"
+  "propagatedNativeBuildInputs"
+  "shell"
+  "shellHook"
+  "stdenv"
+  "strictDeps"
+]
+```
+
+*Declared by:*
+ - [https://github.com/cachix/devenv/blob/main/src/modules/top-level.nix](https://github.com/cachix/devenv/blob/main/src/modules/top-level.nix)
 
 
