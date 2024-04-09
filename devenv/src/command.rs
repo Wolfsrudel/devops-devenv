@@ -140,7 +140,11 @@ impl App {
             };
 
             if self.cli.impure || self.config.impure {
-                flags.push("--impure");
+                // only pass the impure option to the nix command that supports it.
+                // avoid passing it to the older utilities, e.g. like `nix-store` when creating GC roots.
+                if command == "nix" {
+                    flags.push("--impure");
+                }
                 // set a dummy value to overcome https://github.com/NixOS/nix/issues/10247
                 cmd.env("NIX_PATH", ":");
             }
@@ -157,6 +161,7 @@ impl App {
                     Err(e) => {
                         self.logger
                             .warn("Failed to get cachix caches due to evaluation error");
+                        self.logger.debug(&format!("{}", e));
                     }
                     Ok(cachix_caches) => {
                         // handle cachix.pull
@@ -240,7 +245,6 @@ impl App {
                     logging: false,
                     ..Default::default()
                 };
-                let store = self.run_nix("nix", &["store", "ping", "--json"], &no_logging)?;
 
                 let caches_raw =
                     self.run_nix("nix", &["eval", ".#devenv.cachix", "--json"], &no_logging)?;
@@ -287,36 +291,19 @@ impl App {
                 }
 
                 if !caches.caches.pull.is_empty() {
+                    let store = self.run_nix("nix", &["store", "ping", "--json"], &no_logging)?;
                     let trusted = serde_json::from_slice::<StorePing>(&store.stdout)
                         .expect("Failed to parse JSON")
                         .trusted;
-                    if trusted == None {
+                    if trusted.is_none() {
                         self.logger
-                            .warn("You're using very old version of Nix, please upgrade.");
+                            .warn("You're using very old version of Nix, please upgrade and restart nix-daemon.");
                     }
-                    if trusted == Some(0) {
-                        bail!(indoc::formatdoc!(
-                            "You're not a trusted user of the Nix store. You have the following options:
-
-                            1. Add yourself to the trusted-users list in /etc/nix/nix.conf for devenv to manage caches for you.
-
-                            trusted-users = root {}
-
-                            2. Add binary caches to /etc/nix/nix.conf yourself:
-
-                            extra-substituters = {}
-                            extra-trusted-public-keys = {}
-
-                            3. Disable Cachix in `devenv.nix`:
-
-                            {{
-                                cachix.enable = false;
-                            }}
-                        ", whoami::username()
-                        , caches.caches.pull.iter().map(|cache| format!("https://{}.cachix.org", cache)).collect::<Vec<String>>().join(" ")
-                        , caches.known_keys.values().cloned().collect::<Vec<String>>().join(" ")
-                        ));
-                    }
+                    let restart_command = if cfg!(target_os = "linux") {
+                        "sudo systemctl restart nix-daemon"
+                    } else {
+                        "sudo launchctl kickstart -k system/org.nixos.nix-daemon"
+                    };
 
                     self.logger
                         .info(&format!("Using Cachix: {}", caches.caches.pull.join(", ")));
@@ -329,11 +316,41 @@ impl App {
                         }
                         caches.known_keys.extend(new_known_keys);
                     }
+
                     std::fs::write(
                         &self.cachix_trusted_keys,
                         serde_json::to_string(&caches.known_keys).unwrap(),
                     )
-                    .expect("Failed to write cachix caches to file")
+                    .expect("Failed to write cachix caches to file");
+
+                    if trusted == Some(0) {
+                        self.logger.error(&indoc::formatdoc!(
+                            "You're not a trusted user of the Nix store. You have the following options:
+
+                            a) Add yourself to the trusted-users list in /etc/nix/nix.conf for devenv to manage caches for you.
+
+                            trusted-users = root {}
+
+                            Restart nix-daemon with:
+                            
+                              $ {restart_command}
+
+                            b) Add binary caches to /etc/nix/nix.conf yourself:
+
+                            extra-substituters = {}
+                            extra-trusted-public-keys = {}
+
+                            And disable automatic cache configuration in `devenv.nix`:
+
+                            {{
+                                cachix.enable = false;
+                            }}
+                        ", whoami::username()
+                        , caches.caches.pull.iter().map(|cache| format!("https://{}.cachix.org", cache)).collect::<Vec<String>>().join(" ")
+                        , caches.known_keys.values().cloned().collect::<Vec<String>>().join(" ")
+                        ));
+                        bail!("You're not a trusted user of the Nix store.")
+                    }
                 }
 
                 self.cachix_caches = Some(caches.clone());
@@ -363,4 +380,30 @@ struct CachixResponse {
 #[derive(Deserialize, Clone)]
 struct StorePing {
     trusted: Option<u8>,
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_trusted() {
+        let store_ping = r#"{"trusted":1,"url":"daemon","version":"2.18.1"}"#;
+        let store_ping: StorePing = serde_json::from_str(store_ping).unwrap();
+        assert_eq!(store_ping.trusted, Some(1));
+    }
+
+    #[test]
+    fn test_no_trusted() {
+        let store_ping = r#"{"url":"daemon","version":"2.18.1"}"#;
+        let store_ping: StorePing = serde_json::from_str(store_ping).unwrap();
+        assert_eq!(store_ping.trusted, None);
+    }
+
+    #[test]
+    fn test_not_trusted() {
+        let store_ping = r#"{"trusted":0,"url":"daemon","version":"2.18.1"}"#;
+        let store_ping: StorePing = serde_json::from_str(store_ping).unwrap();
+        assert_eq!(store_ping.trusted, Some(0));
+    }
 }

@@ -141,7 +141,7 @@ let
       WorkingDir = "${homeDir}";
       Env = lib.mapAttrsToList
         (name: value:
-          "${name}=${lib.escapeShellArg (toString value)}"
+          "${name}=${toString value}"
         )
         config.env ++ [ "HOME=${homeDir}" "USER=${user}" ];
       Cmd = [ cfg.startupCommand ];
@@ -149,7 +149,9 @@ let
   };
 
   # <registry> <args>
-  mkCopyScript = cfg: pkgs.writeScript "copy-container" ''
+  mkCopyScript = cfg: pkgs.writeShellScript "copy-container" ''
+    set -e -o pipefail
+
     container=$1
     shift
 
@@ -163,7 +165,7 @@ let
     dest="''${registry}${cfg.name}:${cfg.version}"
 
     if [[ $# == 0 ]]; then
-      args=(${toString cfg.defaultCopyArgs})
+      args=(${if cfg.defaultCopyArgs == [] then "" else toString cfg.defaultCopyArgs})
     else
       args=("$@")
     fi
@@ -172,7 +174,7 @@ let
     echo "Copying container $container to $dest"
     echo
 
-    ${nix2container.skopeo-nix2container}/bin/skopeo --insecure-policy copy "nix:$container" "$dest" "''${args[@]}"
+    ${nix2container.skopeo-nix2container}/bin/skopeo --insecure-policy copy "nix:$container" "$dest" ''${args[@]}
   '';
   containerOptions = types.submodule ({ name, config, ... }: {
     options = {
@@ -222,7 +224,7 @@ let
       registry = lib.mkOption {
         type = types.nullOr types.str;
         description = "Registry to push the container to.";
-        default = "docker://";
+        default = "docker-daemon:";
       };
 
       maxLayers = lib.mkOption {
@@ -252,9 +254,7 @@ let
       dockerRun = lib.mkOption {
         type = types.package;
         internal = true;
-        default = pkgs.writeScript "docker-run" ''
-          #!${bash}
-
+        default = pkgs.writeShellScript "docker-run" ''
           docker run -it ${config.name}:${config.version} "$@"
         '';
       };
@@ -297,6 +297,7 @@ in
     })
     (lib.mkIf config.container.isBuilding {
       devenv.root = lib.mkForce "${homeDir}";
+      devenv.dotfile = lib.mkOverride 49 "${homeDir}/.devenv";
     })
   ];
 }

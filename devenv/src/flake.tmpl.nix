@@ -50,11 +50,14 @@
                 name = builtins.head paths;
                 input = inputs.${name} or (throw "Unknown input ${name}");
                 subpath = "/${lib.concatStringsSep "/" (builtins.tail paths)}";
-                devenvpath = "${input}" + subpath + "/devenv.nix";
+                devenvpath = "${input}" + subpath;
+                devenvdefaultpath = devenvpath + "/devenv.nix";
               in
-              if builtins.pathExists devenvpath
+              if lib.hasSuffix ".nix" devenvpath
               then devenvpath
-              else throw (devenvpath + " file does not exist for input ${name}.");
+              else if builtins.pathExists devenvdefaultpath
+              then devenvdefaultpath
+              else throw (devenvdefaultpath + " file does not exist for input ${name}.");
           project = pkgs.lib.evalModules {
             specialArgs = inputs // { inherit inputs pkgs; };
             modules = [
@@ -62,7 +65,7 @@
               {
                 devenv.cliVersion = version;
                 devenv.root = devenv_root;
-                devenv.dotfile = pkgs.lib.mkForce (devenv_root + "/" + devenv_dotfile_string);
+                devenv.dotfile = devenv_root + "/" + devenv_dotfile_string;
               }
               (pkgs.lib.optionalAttrs (inputs.devenv.isTmpDir or false) {
                 devenv.tmpdir = tmpdir;

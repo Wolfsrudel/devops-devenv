@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, inputs, ... }:
 
 {
   # https://devenv.sh/basics/
@@ -14,6 +14,15 @@
     hello
     git --version
   '';
+
+  # https://devenv.sh/tests/
+  enterTest = ''
+    echo "Running tests"
+    git --version | grep "2.42.0"
+  '';
+
+  # https://devenv.sh/services/
+  # services.postgres.enable = true;
 
   # https://devenv.sh/languages/
   # languages.nix.enable = true;

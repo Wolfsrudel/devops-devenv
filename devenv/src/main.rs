@@ -40,7 +40,7 @@ struct Cli {
     max_jobs: u8,
 
     #[arg(
-        short = 'j',
+        short = 'u',
         long,
         help = "Maximum number CPU cores being used by a single build..",
         default_value = "2"
@@ -186,38 +186,41 @@ enum Commands {
 }
 
 #[derive(Subcommand, Clone)]
-#[clap(about = "Start or stop processes.")]
+#[clap(about = "Start or stop processes. https://devenv.sh/processes/")]
 enum ProcessesCommand {
-    #[command(alias = "start")]
+    #[command(alias = "start", about = "Start processes in the foreground.")]
     Up {
         process: Option<String>,
 
-        #[arg(short, long)]
+        #[arg(short, long, help = "Start processes in the background.")]
         detach: bool,
     },
 
-    #[command(alias = "stop")]
+    #[command(alias = "stop", about = "Stop processes running in the background.")]
     Down {},
     // TODO: Status/Attach
 }
 
 #[derive(Subcommand, Clone)]
-#[clap(about = "Build, copy, or run a container. https://devenv.sh/containers/")]
+#[clap(
+    about = "Build, copy, or run a container. https://devenv.sh/containers/",
+    arg_required_else_help(true)
+)]
 enum ContainerCommand {
-    #[clap(about = "Build a container.")]
+    #[command(about = "Build a container.")]
     Build { name: String },
 
-    #[clap(about = "Copy a container.")]
+    #[command(about = "Copy a container to registry.")]
     Copy { name: String },
 
-    #[clap(about = "Run a container.")]
+    #[command(about = "Run a container.")]
     Run { name: String },
 }
 
 #[derive(Subcommand, Clone)]
 #[clap(about = "Add an input to devenv.yaml. https://devenv.sh/inputs/")]
 enum InputsCommand {
-    #[clap(about = "Add an input to devenv.yaml.")]
+    #[command(about = "Add an input to devenv.yaml.")]
     Add {
         #[arg(help = "The name of the input.")]
         name: String,
@@ -536,6 +539,10 @@ impl App {
     }
 
     fn container_build(&mut self, name: &str) -> Result<String> {
+        if cfg!(target_os = "macos") {
+            bail!("Containers are not supported on macOS yet: https://github.com/cachix/devenv/issues/430");
+        }
+
         let _logprogress = log::LogProgress::new(&format!("Building {name} container"), true);
 
         self.assemble()?;
@@ -596,6 +603,8 @@ impl App {
 
         let status = std::process::Command::new(copy_script)
             .args(copy_args)
+            .stdout(std::process::Stdio::inherit())
+            .stderr(std::process::Stdio::inherit())
             .status()
             .expect("Failed to run copy script");
 
@@ -653,7 +662,7 @@ impl App {
         let (to_gc, removed_symlinks) = {
             let _logprogress = log::LogProgress::new(
                 &format!(
-                    "Removing non-existings symlinks in {} ...",
+                    "Removing non-existing symlinks in {} ...",
                     &self.devenv_home_gc.display()
                 ),
                 false,
@@ -939,17 +948,18 @@ impl App {
         }
 
         {
-            let _logprogress = log::LogProgress::new("Starting processes", false);
+            let _logprogress = log::LogProgress::new("Starting processes", true);
 
             let process = process.unwrap_or("");
 
             let processes_script = self.devenv_dotfile.join("processes");
-            let tui_enabled = if *detach { "0" } else { "1" };
+            // we force disable process compose tui if detach is enabled
+            let tui = if *detach { "PC_TUI_ENABLED=0" } else { "" };
             fs::write(
                 &processes_script,
                 indoc::formatdoc! {"
                 #!/usr/bin/env bash
-                export PC_TUI_ENABLED={tui_enabled}
+                {tui}
                 exec {proc_script_string} {process}
             "},
             )
@@ -1213,14 +1223,18 @@ fn cleanup_symlinks(root: &Path) -> (Vec<PathBuf>, Vec<PathBuf>) {
     let mut to_gc = Vec::new();
     let mut removed_symlinks = Vec::new();
 
+    if !root.exists() {
+        std::fs::create_dir_all(root).expect("Failed to create gc directory");
+    }
+
     for entry in fs::read_dir(root).expect("Failed to read directory") {
         let entry = entry.expect("Failed to read entry");
         let path = entry.path();
         if path.is_symlink() {
-            let target = fs::canonicalize(&path).expect("Failed to read link");
-            if !target.exists() {
+            if !path.exists() {
                 removed_symlinks.push(path.clone());
             } else {
+                let target = fs::canonicalize(&path).expect("Failed to read link");
                 to_gc.push(target);
             }
         }

@@ -22,7 +22,12 @@ Running ``devenv init`` generates ``devenv.nix``:
 
   enterShell = ''
     hello
-    git --version
+  '';
+
+  # https://devenv.sh/tests/
+  enterTest = ''
+    echo "Running tests"
+    git --version | grep "2.42.0"
   '';
 
   # https://devenv.sh/languages/
@@ -31,11 +36,14 @@ Running ``devenv init`` generates ``devenv.nix``:
   # https://devenv.sh/scripts/
   scripts.hello.exec = "echo hello from $GREET";
 
+  # https://devenv.sh/services/
+  services.postgres.enable = true;
+
   # https://devenv.sh/pre-commit-hooks/
   pre-commit.hooks.shellcheck.enable = true;
 
   # https://devenv.sh/processes/
-  # processes.ping.exec = "ping example.com";
+  processes.ping.exec = "ping example.com";
 }
 
 ```
@@ -46,6 +54,7 @@ And ``devenv shell`` activates the environment.
 
 ```
 $ devenv
+https://devenv.sh 1.0.1: Fast, Declarative, Reproducible, and Composable Developer Environments
 
 Usage: devenv [OPTIONS] <COMMAND>
 
@@ -68,12 +77,22 @@ Commands:
 Options:
   -v, --verbose
           Enable debug log level.
+  -j, --max-jobs <MAX_JOBS>
+          Maximum number of Nix builds at any time. [default: 8]
+  -j, --cores <CORES>
+          Maximum number CPU cores being used by a single build.. [default: 2]
   -s, --system <SYSTEM>
           [default: x86_64-linux]
+  -i, --impure
+          Relax the hermeticity of the environment.
+  -c, --clean [<CLEAN>...]
+          Ignore existing environment variables when entering the shell. Pass a list of comma-separated environment variables to let through.
   -d, --nix-debugger
           Enter Nix debugger on failure.
   -n, --nix-option <NIX_OPTION> <NIX_OPTION>
           Pass additional options to nix commands, see `man nix.conf` for full list.
+  -o, --override-input <OVERRIDE_INPUT> <OVERRIDE_INPUT>
+          Override inputs in devenv.yaml.
   -h, --help
           Print help
 ```
